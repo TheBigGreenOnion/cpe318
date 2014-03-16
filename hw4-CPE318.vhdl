@@ -3,7 +3,7 @@ entity count4 is
         Q : out unsigned(3 downto 0));
 end entity count4;
 
-architecture behavioral of count4 is
+architecture sync of count4 is
 signal count_t : unsigned (3 downto 0) := "0000";
 
 begin
@@ -19,7 +19,27 @@ begin
             end if;
         end if;
     end process count;
-end architecture behavioral;
+end architecture sync;
+
+
+architecture async of count4 is
+signal count_t : unsigned (3 downto 0) := "0000";
+
+begin
+    Q <= count_t;
+
+    process : count (clk, rst)
+    begin
+        if (rst = '1') then
+            count_t <= "0000";
+        elsif (rising_edge(clk)) then
+            if (ce = '1') then
+                count_t <= count_t + 1;
+            end if;
+        end if;
+    end process count;
+end architecture async;
+
 
 
 
