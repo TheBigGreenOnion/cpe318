@@ -1,4 +1,5 @@
-add 	0x00	0000	20
+inst   op     body   Fn 
+add 	0x00	0000	20  
 addu	0x00	0000	21	
 and	    0x00	0000	24	
 div	    0x00	0000	1a	
