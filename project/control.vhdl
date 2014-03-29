@@ -1,0 +1,5 @@
+-- gives clock to each stage as it is executed to avoid problems with single instruction pipeline
+-- fetch | decode | execute | data | reg
+-- 1     | 0      | 0       | 0    | 0
+-- 0     | 1      | 0       | 0    | 0
+-- etc
