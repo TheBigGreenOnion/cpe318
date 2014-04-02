@@ -9,10 +9,7 @@ end entity mux2;
 
 architecture behav of mux2 is
 begin
-    mux : process (a,b,sel)
-    begin
-        out <= a when sel = '0' else
-               b when sel = '1' else
-               (others => '0'); when others;
-    end process mux;
+    output <= a when sel = '0' else
+              b when sel = '1' else
+              (others => '0'); when others;
 end architecture behav;

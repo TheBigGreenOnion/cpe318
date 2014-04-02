@@ -1,0 +1,57 @@
+-------
+ALU based - Register instructions
+
+ADD     Rd = [Rs] + [Rt]
+SUB     Rd = [Rs] - [Rt]
+AND     Rd = [Rs] and [Rt]
+OR      Rd = [Rs] or [Rt]
+XOR     Rd = [Rs] xor [Rt]
+SLLV    Rd = [Rt] << [Rs]
+SRLV    Rd = [Rt] >> [Rs]
+
+SLT     Rd = [Rs] < [Rt] ? 1 : 0
+
+MULT / DIV?
+
+ ------
+ ALU based - Immediate instructions
+
+ADDI    Rd = [Rs] + Imm16
+ANDI    Rd = [Rs] and Imm16
+ORI     Rd = [Rs] or Imm16
+XORI    Rd = [Rs] xor Imm16
+SLL     Rd = [Rs] << Shamt
+SRA     Rd = [Rs] >>> Shamt -- sign bit
+SRL     Rd = [Rs] >> Shamt  -- zeros
+
+--------
+PC set 
+
+BEQ     PC = ([Rs] == [Rt] ? PC + Imm16 : PC + 1)
+BNE     PC = ([Rs] != [Rt] ? PC + Imm16 : PC + 1)
+
+J       PC = Imm26
+JAL     LR = PC, PC = Imm26
+JR      PC = [Rs]
+
+
+-------
+Mem instructions
+
+LW      [Rt] = Mem([Rs] + Imm16)
+SW      Mem([Rs] + Imm16) = [Rt]
+
+LB      not implemented yet
+SB      not implemented yet
+------
+
+ALU : Used for: ADD(I) SUB AND(I) OR(I) XOR(I) SLL(V) SRL(V) SRA
+-- input 1 always [Rs]
+-- input 2 either [Rt] or Imm16
+-- output Rd
+
+Comparator used for: BEQ, BNE, SLT
+-- input 1 always [Rs]
+-- input 2 always [Rt]
+
+Next PC: 

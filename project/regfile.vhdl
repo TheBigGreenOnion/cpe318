@@ -19,7 +19,7 @@ begin
     begin
         if (rising_edge(clk)) then
             if (reg_write = '1') then
-                redarray(to_integer(unsigned(r3))) <= write_data;
+                regarray(to_integer(unsigned(r3))) <= write_data;
             end if;
         end if;
     end process write;
