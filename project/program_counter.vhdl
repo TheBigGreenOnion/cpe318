@@ -4,15 +4,21 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity program_counter is
-    port (pc_jmp : in std_logic_vector (31 downto 0);
-        clk, pc_en : in std_logic;
+    port (pc_dest : in std_logic_vector (31 downto 0);
+        clk, pc_en, rst : in std_logic;
         pc_addr : out std_logic_vector(31 downto 0));
 end entity program_counter;
 
 -- Behavior of program counter
 architecture behav of program_counter is
-    signal : unsigned(31 downto 0);
+    signal : ip unsigned(31 downto 0);
 begin
-
-    jump : process
+    pc_inc : process (clk, rst, pc_en)
+    begin
+        if (rising_edge(clk)) then
+            if (rst = '1') then
+                pc_addr <= (others => '0');
+            elsif (pc_en = '1') then
+                pc_addr <= pc_dest;
+            end if;
 end architecture behav;
