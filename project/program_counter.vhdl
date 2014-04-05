@@ -21,4 +21,5 @@ begin
             elsif (pc_en = '1') then
                 pc_addr <= pc_dest;
             end if;
+        end if;
 end architecture behav;

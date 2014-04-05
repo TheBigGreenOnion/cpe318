@@ -24,7 +24,8 @@ begin
     -- Combinational logic for control signals.
     signal_control : process
     begin
-       s_reg_dest <= '0' when 
+        if (staage1) then
+            
 
 end architecture behav;
 

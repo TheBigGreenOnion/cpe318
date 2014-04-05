@@ -5,6 +5,7 @@ use ieee.numeric_std.all;
 
 entity code_mem is
     port (read_addr : in unsigned ();
+        en, clk : in std_logic;
         d_out : out std_logic_vector(31 downto 0));
 end entity code_mem;
 
