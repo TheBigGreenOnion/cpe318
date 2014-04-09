@@ -13,13 +13,12 @@ end entity program_counter;
 architecture behav of program_counter is
     signal : ip unsigned(31 downto 0);
 begin
+    pc_addr <= ip;
     pc_inc : process (clk, rst, pc_en)
     begin
         if (rising_edge(clk)) then
-            if (rst = '1') then
-                pc_addr <= (others => '0');
-            elsif (pc_en = '1') then
-                pc_addr <= pc_dest;
+            if (pc_en = '1') then
+                ip <= pc_dest;
             end if;
         end if;
 end architecture behav;

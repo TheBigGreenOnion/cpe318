@@ -14,9 +14,9 @@ end entity control;
 
 architecture behav of control is 
     signal s_pc_write_cond, s_pc_write, s_pc_source : std_logic;
-    signal s_mem_addr, s_mem_toreg : std_logic;
+    signal s_mem_addr, s_mem_toreg, s_mem_write : std_logic;
     signal s_reg_writeinst, s_reg_dest, s_reg_write : std_logic;
-    signal s_alu_src_a : std_logic;
+    signal s_alu_src_a, s_ir_write : std_logic;
     signal s_alu_op, s_alu_src_b : std_logic_vector(1 downto 0);
 
 begin
@@ -24,8 +24,8 @@ begin
     -- Combinational logic for control signals.
     signal_control : process
     begin
-        if (staage1) then
-            
+
+state0 :
 
 end architecture behav;
 
