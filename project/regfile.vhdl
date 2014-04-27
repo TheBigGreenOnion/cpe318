@@ -2,7 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity regfile is
-    port (addr1, addr2, addr3, write_data : in std_logic_vector (31 downto 0);
+    port (addr1, addr2, addr3 : in std_logic_vector (5 downto 0);
+        write_data : in std_logic_vector(31 downto 0);
         out1 out2 : out std_logic_vector (31 downto 0);
         reg_write, clk : in std_logic);
 end entity regfile;
