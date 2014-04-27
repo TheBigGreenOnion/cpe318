@@ -1,7 +1,6 @@
 -- mux2
 
 entitiy mux2 is
-    generic (n : integer);
     port (a, b : in std_logic_vector(n-1 downto 0);
         sel : in std_logic;
         output : out std_logic_vector(n-1 downto 0));

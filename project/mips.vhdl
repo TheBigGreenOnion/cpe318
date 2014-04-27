@@ -16,34 +16,21 @@ architecture behav of mips is
     signal derp : std_logic;
 
 begin
-    pc : program_counter
-    port map (
-        pc_dest => s_pc_jmp,
-        pc_en => s_jmp_en,
-        pc_addr => s_pc_addr,
-        clk => pc_clk
-    );
-
-    code : code_mem
-    port map (
-        read_addr => s_read_addr,
-        data_out => s_instruction
-    );
-
-    data : data_mem
-    port map (
-        read_addr => s_read_addr,
-        write_addr => s_write_addr,
-        read_en => s_read_en,
-        write_en => s_write_en,
-        clk => clk,
-        d_in => ram_write_data
-    );
-    
     regfile1 : regfile
     port map (
-        read_addr => s_reg_read_addr,
-        write_addr => s_reg_write_addr,
     );
 
     
+alu1 : alu
+alu_control1 : alu_control
+control_unit1 : control_unit
+datapath1 : datapath
+inst_reg1 : inst_reg
+lshift2 : lshift2
+mux2
+mux4
+program_counter1 : program_counter
+ram1 : ram
+regfile1 : regfile
+rom1 : rom
+signext : signext
