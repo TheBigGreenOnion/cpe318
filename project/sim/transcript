@@ -1,0 +1,605 @@
+# reading /opt/altera/13.1/modelsim_ase/linux/../modelsim.ini
+# Loading project cpe318
+# Compile of mux2.vhdl was successful.
+# Compile of mux4.vhdl was successful.
+# Compile of lshift2.vhdl failed with 1 errors.
+# Compile of lshift2.vhdl failed with 1 errors.
+# Compile of lshift2.vhdl failed with 1 errors.
+# Compile of lshift2.vhdl was successful.
+# Compile of inst_reg.vhdl was successful with warnings.
+# Compile of program_counter.vhdl failed with 1 errors.
+# Compile of program_counter.vhdl failed with 1 errors.
+# Compile of program_counter.vhdl failed with 1 errors.
+# Compile of program_counter.vhdl was successful.
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl failed with 1 errors.
+
+
+
+
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl failed with 1 errors.
+
+
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl was successful.
+# Compile of signext.vhdl failed with 1 errors.
+# Compile of signext.vhdl failed with 1 errors.
+# Compile of signext.vhdl was successful.
+# Compile of ram.vhdl failed with 1 errors.
+# Compile of ram.vhdl failed with 1 errors.
+# Compile of ram.vhdl failed with 1 errors.
+# Compile of ram.vhdl failed with 1 errors.
+# Compile of ram.vhdl failed with 1 errors.
+
+
+
+# Compile of ram.vhdl failed with 1 errors.
+# Compile of ram.vhdl was successful.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+
+
+# Compile of control_unit.vhdl failed with 2 errors.
+vsim work.signext
+# vsim work.signext 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.signext(behav)
+add wave -position insertpoint  \
+sim:/signext/d_in \
+sim:/signext/d_out
+force -freeze sim:/signext/d_in FFFF 0
+# Value length (4) does not equal array index length (16).
+# 
+# ** Error: (vsim-4011) Invalid force value: FFFF 0.
+# 
+force -freeze sim:/signext/d_in 1110000000000000 0
+run 20ps
+# status=1
+# invalid command name "::.main_pane.source.interior.cs.body.editor"
+force -freeze sim:/signext/d_in 0110000000000000 0
+run 20ps
+quit -sim
+# Compile of rom.vhdl failed with 1 errors.
+vsim work.regfile
+# vsim work.regfile 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.regfile(behav)
+force -freeze sim:/regfile/addr1 000000 0
+force -freeze sim:/regfile/addr2 000000 0
+force -freeze sim:/regfile/addr3 000000 0
+force -freeze sim:/regfile/write_data FFFFFFFF 0
+# Value length (8) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: FFFFFFFF 0.
+# 
+force -freeze sim:/regfile/write_data 0xFFFFFFFF 0
+# Value length (10) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: 0xFFFFFFFF 0.
+# 
+force -freeze sim:/regfile/write_data 11111111111111111111111111111111 0
+force -freeze sim:/regfile/reg_write 1 0
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+run 100ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+add wave -position insertpoint  \
+sim:/regfile/registers
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+# Can't move the Now cursor.
+force -freeze sim:/regfile/addr3 000001 0
+run 100ps
+run 100ps
+run 100ps
+restart -f
+force -freeze sim:/regfile/reg_write 1 0
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/regfile/addr3 000001 0
+run 100ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+run 100ps
+run 100ps
+
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+restart -f
+quit -sim
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl was successful.
+vsim -voptargs=+acc work.regfile
+# vsim -voptargs=+acc work.regfile 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.regfile(behav)
+force -freeze sim:/regfile/addr1 000001 0
+force -freeze sim:/regfile/registers(1) 00000000111111110000000011111111 0
+force -freeze sim:/regfile/reg_write 0 0
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+run 50ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+force -freeze sim:/regfile/addr3 000010 0
+force -freeze sim:/regfile/write_data 00000000111111110000000011111111 0
+force -freeze sim:/regfile/write_data 00000000111111110000000011111111 0
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+force -freeze sim:/regfile/reg_write 1 0
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+add wave -position insertpoint  \
+sim:/regfile/registers
+quit -sim
+# Compile of regfile.vhdl was successful.
+vsim -voptargs=+acc work.regfile
+# vsim -voptargs=+acc work.regfile 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.regfile(behav)
+force -freeze sim:/regfile/addr3 000001 0
+force -freeze sim:/regfile/reg_write U 1
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+add wave -position insertpoint  \
+sim:/regfile/registers
+add wave -position insertpoint  \
+sim:/regfile/registers
+run 50 ps
+run 50 ps
+run 50 ps
+force -freeze sim:/regfile/write_data 00000000111111110000000011111111 0
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+# Compile of alu.vhdl failed with 1 errors.
+# Compile of alu_control.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of inst_reg.vhdl was successful with warnings.
+# Compile of lshift2.vhdl was successful.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mux2.vhdl was successful.
+# Compile of mux4.vhdl was successful.
+# Compile of program_counter.vhdl was successful.
+# Compile of ram.vhdl was successful.
+# Compile of regfile.vhdl was successful.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of signext.vhdl was successful.
+# Compile of tb_alu.vhdl failed with 1 errors.
+# Compile of tb_alu_control.vhdl failed with 1 errors.
+# Compile of tb_inst_reg.vhdl failed with 1 errors.
+# Compile of tb_lshift2.vhdl failed with 1 errors.
+# Compile of tb_mips.vhdl failed with 1 errors.
+# Compile of tb_mux2.vhdl failed with 1 errors.
+# Compile of tb_mux4.vhdl failed with 1 errors.
+# Compile of tb_program_counter.vhdl failed with 1 errors.
+# Compile of tb_regfile.vhdl failed with 1 errors.
+# Compile of tb_rom.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_template.vhdl failed with 1 errors.
+# 25 compiles, 17 failed with 18 errors. 
+# Compile of regfile.vhdl was successful.
+restart -f
+# Loading work.regfile(behav)
+force -freeze sim:/regfile/write_data 00000000111111110000000011111111 0
+run 1 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+add wave -position insertpoint  \
+sim:/regfile/clk
+force -freeze sim:/regfile/reg_write 1 0
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 51 ps  Iteration: 0  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 51 ps  Iteration: 1  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 51 ps  Iteration: 1  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 151 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 251 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 351 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 451 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 551 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 651 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 751 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 851 ps  Iteration: 0  Instance: /regfile
+run 50 ps
+run 50 ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 951 ps  Iteration: 0  Instance: /regfile
+restart -f
+# Compile of regfile.vhdl was successful.
+force -drive sim:/regfile/reg_write 1 0
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/regfile/addr3 111111 0
+force -freeze sim:/regfile/write_data 11111111111111111111111111111111 0
+run 100ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+# ** Fatal: (vsim-3734) Index value 63 is out of range 31 downto 0.
+#    Time: 50 ps  Iteration: 0  Process: /regfile/write File: /home/anti/scratch/cpe318/project/regfile.vhdl
+# Fatal error in Process write at /home/anti/scratch/cpe318/project/regfile.vhdl line 24
+# 
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+run 100ps
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+run 100ps
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+run 100ps
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+run 100ps
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+run 100ps
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+force -freeze sim:/regfile/reg_write 1 0
+run 100ps
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+force -freeze sim:/regfile/addr3 000011 0
+force -freeze sim:/regfile/addr3 000011 0
+run 100ps
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /home/anti/scratch/cpe318/project/regfile.vhdl 24 Process write
+# 
+quit -sim
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/regfile.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity regfile
+# -- Compiling architecture behav of regfile
+vsim -voptargs=+acc work.regfile
+# vsim -voptargs=+acc work.regfile 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.regfile(behav)
+force -freeze sim:/regfile/addr3 000000 0
+force -freeze sim:/regfile/write_data FFFFFFFF 0
+# Value length (8) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: FFFFFFFF 0.
+# 
+force -freeze sim:/regfile/write_data 11111111 0
+# Value length (8) does not equal array index length (32).
+# 
+# ** Error: (vsim-4011) Invalid force value: 11111111 0.
+# 
+force -freeze sim:/regfile/write_data 32'hFFFFFFFF 0
+force -freeze sim:/regfile/reg_write U 1
+force -freeze sim:/regfile/clk 0 0, 1 {50 ps} -r 100
+run 100ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /regfile
+add wave -position insertpoint  \
+sim:/regfile/registers
+add wave -position insertpoint  \
+sim:/regfile/registers
+add wave -position insertpoint  \
+sim:/regfile/registers
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+force -freeze sim:/regfile/reg_write 1 0
+run 100ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ps  Iteration: 1  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 750 ps  Iteration: 1  Instance: /regfile
+run 100ps
+run 100ps
+run 100ps
+force -freeze sim:/regfile/addr3 000001 0
+run 100ps
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1150 ps  Iteration: 1  Instance: /regfile
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 1150 ps  Iteration: 1  Instance: /regfile
+run 100ps
+force -freeze sim:/regfile/reg_write 0 0
+force -freeze sim:/regfile/addr1 000000 0
+force -freeze sim:/regfile/addr2 000001 0
+run 100ps
+force -freeze sim:/regfile/registers(1) 00000000000000000000000000000001 0
+force -freeze sim:/regfile/registers(0) 00000000000000000000000000000000 0
+run 100ps
+run 100ps
+quit -sim
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/program_counter.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity program_counter
+# -- Compiling architecture behav of program_counter
+vsim -voptargs=+acc work.program_counter
+# vsim -voptargs=+acc work.program_counter 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.program_counter(behav)
+# Compile of regfile.vhdl was successful.
+quit -sim
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/program_counter.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity program_counter
+# -- Compiling architecture behav of program_counter
+vsim -voptargs=+acc work.program_counter
+# vsim -voptargs=+acc work.program_counter 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.program_counter(behav)
+force -freeze sim:/program_counter/rst 1 0
+run 100ps
+force -freeze sim:/program_counter/rst 0 0
+force -freeze sim:/program_counter/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/program_counter/pc_dest 00000000000000000000000000001000 0
+add wave -position insertpoint  \
+sim:/program_counter/pc_dest \
+sim:/program_counter/clk \
+sim:/program_counter/pc_en \
+sim:/program_counter/rst \
+sim:/program_counter/pc_addr \
+sim:/program_counter/ip
+run 100ps
+run 100ps
+run 100ps
+force -freeze sim:/program_counter/pc_en 1 0
+force -freeze sim:/program_counter/pc_en 1 0
+run 100ps
+quit -sim
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/signext.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity signext
+# ** Error: /home/anti/scratch/cpe318/project/signext.vhdl(6): (vcom-1144) Value -2 (of type std.STANDARD.NATURAL) is out of range 0 to 2147483647.
+# ** Error: /home/anti/scratch/cpe318/project/signext.vhdl(7): VHDL Compiler exiting
+# /opt/altera/13.1/modelsim_ase/linux/vcom failed.
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/signext.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity signext
+# -- Compiling architecture behav of signext
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/ram.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity data_mem
+# -- Compiling architecture behav of data_mem
+# Compile of ram.vhdl was successful.
+vsim -voptargs=+acc work.data_mem
+# vsim -voptargs=+acc work.data_mem 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.data_mem(behav)
+force -freeze sim:/data_mem/clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/data_mem/write_addr 0000000000 0
+force -freeze sim:/data_mem/write_en 1 0
+force -freeze sim:/data_mem/d_in 00000000111111110000000011111111 0
+add wave -position insertpoint  \
+sim:/data_mem/read_addr \
+sim:/data_mem/write_addr \
+sim:/data_mem/d_in \
+sim:/data_mem/d_out \
+sim:/data_mem/ram
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+force -freeze sim:/data_mem/write_en 0 0
+force -freeze sim:/data_mem/read_en 1 0
+force -freeze sim:/data_mem/read_addr 0000000000 0
+run 100ps
+run 100ps
+
+quit -sim
+# Compile of inst_reg.vhdl was successful with warnings.
+vsim -voptargs=+acc work.inst_reg
+# vsim -voptargs=+acc work.inst_reg 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.inst_reg(behav)
+force -freeze sim:/inst_reg/inst_in 00000000000000001111111111111111 0
+force -freeze sim:/inst_reg/clk 0 0, 1 {50 ps} -r 100
+add wave -position insertpoint  \
+sim:/inst_reg/inst_in \
+sim:/inst_reg/ir_write \
+sim:/inst_reg/clk \
+sim:/inst_reg/inst_out \
+sim:/inst_reg/inst
+run 100ps
+# Break key hit 
+# Break in Process latch at /home/anti/scratch/cpe318/project/inst_reg.vhdl line 22
+
+
+quit -sim
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/inst_reg.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity inst_reg
+# -- Compiling architecture behav of inst_reg
+# ** Error: /home/anti/scratch/cpe318/project/inst_reg.vhdl(15): near ";": syntax error
+# ** Error: /home/anti/scratch/cpe318/project/inst_reg.vhdl(23): VHDL Compiler exiting
+# /opt/altera/13.1/modelsim_ase/linux/vcom failed.
+vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/inst_reg.vhdl
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity inst_reg
+# -- Compiling architecture behav of inst_reg
+vsim -voptargs=+acc work.inst_reg
+# vsim -voptargs=+acc work.inst_reg 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.inst_reg(behav)
+force -freeze sim:/inst_reg/inst_in 32'hFFFFFFFF 0
+force -freeze sim:/inst_reg/clk 0 0, 1 {50 ps} -r 100
+run 100ps
+add wave -position insertpoint  \
+sim:/inst_reg/inst_in \
+sim:/inst_reg/ir_write \
+sim:/inst_reg/clk \
+sim:/inst_reg/inst_out \
+sim:/inst_reg/inst
+run 100ps
+run 100ps
+force -freeze sim:/inst_reg/ir_write 1 0
+run 100ps
+force -freeze sim:/inst_reg/ir_write 0 0
+run 100ps
+run 100ps
+run 100ps
+quit -sim

@@ -11,12 +11,12 @@ end entity code_mem;
 
 
 architecture behav of code_mem is
-    type code array (0 to n) of std_logic_vector(31 downto 0);
-    program : code;
+    type code_t is array (0 to ?XXX?) of std_logic_vector(31 downto 0);
+    imem : code_t;
 
 begin
     fetch : process (read_addr)
-        d_out <= program(read_addr);
+        d_out <= imem(to_integer(unsigned(read_addr)));
     end process fetch;
 end architecture behav;
 

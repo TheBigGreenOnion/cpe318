@@ -12,7 +12,7 @@ architecture behav of inst_reg is
 begin
     inst_out <= inst;
 
-    latch : process 
+    latch : process (clk, ir_write) 
     begin
         if (rising_edge(clk)) then
             if (ir_write = '1') then
