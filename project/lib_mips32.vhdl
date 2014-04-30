@@ -18,8 +18,8 @@ package lib_mips32 is
     constant MFLO_FN	:   std_logic_vector(5 downto 0)    := "010010"; -- 12	
     constant MTHI_FN	:   std_logic_vector(5 downto 0)    := "010001"; -- 11	
     constant MTLO_FN	:   std_logic_vector(5 downto 0)    := "010011"; -- 13	
-    constant MULT_FN	:   std_logic_vector(5 downto 0)    := "011000"; -- 18	
-    constant MULTU_FN	:   std_logic_vector(5 downto 0)    := "011001"; -- 19	
+    constant MUL_FN 	:   std_logic_vector(5 downto 0)    := "011000"; -- 18	
+    constant MULU_FN	:   std_logic_vector(5 downto 0)    := "011001"; -- 19	
     constant NOR_FN 	:   std_logic_vector(5 downto 0)    := "100111"; -- 27	
     constant OR_FN  	:   std_logic_vector(5 downto 0)    := "100101"; -- 25	
     constant REM_FN 	:   std_logic_vector(5 downto 0)    := "011010"; -- 1a	
@@ -29,7 +29,7 @@ package lib_mips32 is
     constant SLT_FN 	:   std_logic_vector(5 downto 0)    := "101010"; -- 2a	
     constant SLTU_FN	:   std_logic_vector(5 downto 0)    := "101011"; -- 2b	
     constant SRA_FN 	:   std_logic_vector(5 downto 0)    := "000011"; -- 03	
-    constant SRA_FN 	:   std_logic_vector(5 downto 0)    := "000111"; -- 07	
+    constant SRAV_FN 	:   std_logic_vector(5 downto 0)    := "000111"; -- 07	
     constant SRL_FN 	:   std_logic_vector(5 downto 0)    := "000010"; -- 02	
     constant SRLV_FN	:   std_logic_vector(5 downto 0)    := "000110"; -- 06	
     constant XOR_FN 	:   std_logic_vector(5 downto 0)    := "100110"; -- 26	
@@ -68,7 +68,46 @@ package lib_mips32 is
     constant SW_OP  	:   std_logic_vector(5 downto 0)    := "101011";	
     constant SWR_OP     :   std_logic_vector(5 downto 0)    := "101110";	
 
-    -- MIPS Declarations
+    -- Define control unit - alu communications
+    constant ALU_OP_ADD     :   std_logic_vector(2 downto 0)    := "000";
+    constant ALU_OP_FN      :   std_logic_vector(2 downto 0)    := "001";
+    constant ALU_OP_SLT     :   std_logic_vector(2 downto 0)    := "010";
+    constant ALU_OP_AND     :   std_logic_vector(2 downto 0)    := "011";
+    constant ALU_OP_XOR     :   std_logic_vector(2 downto 0)    := "100";
+    constant ALU_OP_OR      :   std_logic_vector(2 downto 0)    := "101";
+    constant ALU_OP_SUB     :   std_logic_vector(2 downto 0)    := "110";
+    constant ALU_OP_WAT     :   std_logic_vector(2 downto 0)    := "111";
+
+    -- Define alu control signals
+	constant    ALU_CTRL_ADD  	: std_logic_vector(4 downto 0) := "00001";
+	constant    ALU_CTRL_ADDU 	: std_logic_vector(4 downto 0) := "00010";
+	constant    ALU_CTRL_SUB  	: std_logic_vector(4 downto 0) := "00011";
+	constant    ALU_CTRL_SUBU 	: std_logic_vector(4 downto 0) := "00100";
+	constant    ALU_CTRL_AND  	: std_logic_vector(4 downto 0) := "00101";
+	constant    ALU_CTRL_DIV  	: std_logic_vector(4 downto 0) := "00110";
+	constant    ALU_CTRL_DIVU 	: std_logic_vector(4 downto 0) := "00111";
+	constant    ALU_CTRL_JALR 	: std_logic_vector(4 downto 0) := "01000";
+	constant    ALU_CTRL_JR   	: std_logic_vector(4 downto 0) := "01001";
+	constant    ALU_CTRL_MFHI 	: std_logic_vector(4 downto 0) := "01010";
+	constant    ALU_CTRL_MFLO 	: std_logic_vector(4 downto 0) := "01011";
+	constant    ALU_CTRL_MTHI 	: std_logic_vector(4 downto 0) := "01100";
+	constant    ALU_CTRL_MTLO 	: std_logic_vector(4 downto 0) := "01101";
+	constant    ALU_CTRL_MUL  	: std_logic_vector(4 downto 0) := "01110";
+	constant    ALU_CTRL_MULU 	: std_logic_vector(4 downto 0) := "01111";
+	constant    ALU_CTRL_NOR  	: std_logic_vector(4 downto 0) := "10000";
+	constant    ALU_CTRL_OR   	: std_logic_vector(4 downto 0) := "10001";
+	constant    ALU_CTRL_REM  	: std_logic_vector(4 downto 0) := "10010";
+	constant    ALU_CTRL_REMU 	: std_logic_vector(4 downto 0) := "10011";
+	constant    ALU_CTRL_SLL  	: std_logic_vector(4 downto 0) := "10101";
+	constant    ALU_CTRL_SLT  	: std_logic_vector(4 downto 0) := "10110";
+	constant    ALU_CTRL_SLTU 	: std_logic_vector(4 downto 0) := "10111";
+	constant    ALU_CTRL_SRA  	: std_logic_vector(4 downto 0) := "11001";
+	constant    ALU_CTRL_SRL  	: std_logic_vector(4 downto 0) := "11010";
+	constant    ALU_CTRL_XOR  	: std_logic_vector(4 downto 0) := "11100";
+
+
+    -- General Declarations
     constant Zero32     :   std_logic_vector(31 downto 0)   := (others => '0');
+
 
 end package lib_mips32;

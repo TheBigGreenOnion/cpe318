@@ -2,6 +2,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.lib_mips32.all;
 
 entity code_mem is
     port (read_addr : in unsigned ();
@@ -12,7 +13,7 @@ end entity code_mem;
 
 architecture behav of code_mem is
     type code_t is array (0 to ?XXX?) of std_logic_vector(31 downto 0);
-    imem : code_t;
+    imem : code_t; --:= ""
 
 begin
     fetch : process (read_addr)

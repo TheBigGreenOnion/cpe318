@@ -1,5 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use work.lib_mips32.all;
 
 entity alu_control is
     port (alu_op : in std_logic_vector(1 downto 0);
@@ -8,52 +9,56 @@ entity alu_control is
 end entity alu_control;
 
 architecture behav of alu_control is
-signal r : std_logic_vector (3 downto 0);
+signal FNCODE : std_logic_vector (4 downto 0);
 begin
 
     -- store/load
     with alu_op select
-        alu_control <= "0000" when "000" else  -- store/load
-            r      when "001" else       -- determined by fn
-            "0000" when "010" else  -- add
-            "0100" when "011" else  -- or
-            "0010" when "100" else  -- and
-            "0101" when "101" else  -- xor
-            "0001" when "110" else  -- sub
-            "0000" when others;
+        alu_control <= 
+            FNCODE        when alu_ctrl = ALU_FN else       -- determined by fn
+            ALU_CTRL_ADD  when alu_ctrl = ALU_OP_ADD else  -- add
+            ALU_CTRL_OR   when alu_ctrl = ALU_OP_OR else  -- or
+            ALU_CTRL_AND  when alu_ctrl = ALU_OP_AND else  -- and
+            ALU_CTRL_XOR  when alu_ctrl = ALU_OP_XOR else  -- xor
+            ALU_CTRL_SUB  when alu_ctrl = ALU_OP_SUB else  -- sub
+            ALU_CTRL_SLT  when alu_ctrl = ALU_OP_SLT;
 
     -- R type
     -- sort by function parameter
+    -- ALU_CTRL_* => 
     with fn select
-        r <= "0000" when "100000" else  -- add
-             "0000" when "100001" else  -- addu
-             "0001" when "100010" else  -- sub
-             "0001" when "100011" else  -- subu
-             "0010" when "100100" else  -- and
-             "0011" when "100111" else  -- nor
-             "0100" when "100101" else  -- or
-             "0101" when "100110" else  -- xor
-             "0110" when "011000" else  -- mult
-             "0110" when "011001" else  -- multu
-             "0111" when "011010" else  -- div
-             "0111" when "011011" else  -- divu
-             "1000" when "000000" else  -- sll
-             "1001" when "000100" else  -- sllv
-             "1010" when "000011" else  -- sra
-             "1011" when "000111" else  -- srav
-             "1100" when "000010" else  -- srl
-             "1101" when "000110" else  -- srlv
-             "0000" when others;
+        FNCODE <= 
+            ALU_CTRL_ADD  when  ADD_FN    else
+            ALU_CTRL_ADDU when  ADDU_FN   else
+            ALU_CTRL_SUB  when  SUB_FN 	else
+            ALU_CTRL_SUBU when  SUBU_FN   else
+            ALU_CTRL_AND  when  AND_FN    else
+            ALU_CTRL_DIV  when  DIV_FN	else
+            ALU_CTRL_DIVU when  DIVU_FN   else
+            ALU_CTRL_JALR when  JALR_FN   else
+            ALU_CTRL_JR   when  JR_FN     else
+            ALU_CTRL_MFHI when  MFHI_FN   else
+            ALU_CTRL_MFLO when  MFLO_FN   else
+            ALU_CTRL_MTHI when  MTHI_FN   else
+            ALU_CTRL_MTLO when  MTLO_FN   else
+            ALU_CTRL_MUL  when  MULT_FN   else
+            ALU_CTRL_MULU when  MULTU_FN  else
+            ALU_CTRL_NOR  when  NOR_FN 	else
+            ALU_CTRL_OR   when  OR_FN     else
+            ALU_CTRL_REM  when  REM_FN 	else
+            ALU_CTRL_REMU when  REMU_FN	else
+            ALU_CTRL_SLL  when  SLL_FN 	else
+            ALU_CTRL_SLL  when  SLLV_FN	else
+            ALU_CTRL_SLT  when  SLT_FN 	else
+            ALU_CTRL_SLTU when  SLTU_FN	else
+            ALU_CTRL_SRA  when  SRA_FN 	else
+            ALU_CTRL_SRA  when  SRAV_FN 	else
+            ALU_CTRL_SRL  when  SRL_FN 	else
+            ALU_CTRL_SRL  when  SRLV_FN	else
+            ALU_CTRL_XOR  when  XOR_FN; 
+        
+        shift_sel <= '1' when fn = SRLV_FN | SRAV_FN | SLLV_FN else
+                     '0';
 
-    -- other stuff
 
---mfhi    0x00    0000    10  
---mflo    0x00    0000    12  
---mthi    0x00    0000    11  
---mtlo    0x00    0000    13  
---slt     0x00    0000    2a  
---sltu    0x00    0000    2b  
---slti    0x28    0000    00  
---sltiu   0x2c    0000    00  
-    
-end architecture behav;
+end architecture;

@@ -11,7 +11,7 @@ entity data_mem is
 end entity data_mem;
 
 architecture behav of data_mem is
-    type ram_t is array (0 to 1023) of std_logic_vector(31 downto 0);
+    type ram_t is array (0 to 1023) of std_logic_vector(7 downto 0);
     signal ram : ram_t;
 begin
     data_rw : process(clk, write_en, read_en)

@@ -603,3 +603,222 @@ run 100ps
 run 100ps
 run 100ps
 quit -sim
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of lib_mips32.vhdl failed with 2 errors.
+# Compile of lib_mips32.vhdl was successful.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of lib_mips32.vhdl was successful.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+
+
+
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of alu.vhdl failed with 1 errors.
+# Compile of alu_control.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of inst_reg.vhdl was successful.
+# Compile of lshift2.vhdl was successful.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mux2.vhdl was successful.
+# Compile of mux4.vhdl was successful.
+# Compile of program_counter.vhdl was successful.
+# Compile of ram.vhdl was successful with warnings.
+# Compile of regfile.vhdl was successful.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of signext.vhdl was successful.
+# Compile of tb_alu.vhdl failed with 1 errors.
+# Compile of tb_alu_control.vhdl failed with 1 errors.
+# Compile of tb_inst_reg.vhdl failed with 1 errors.
+# Compile of tb_lshift2.vhdl failed with 1 errors.
+# Compile of tb_mips.vhdl failed with 1 errors.
+# Compile of tb_mux2.vhdl failed with 1 errors.
+# Compile of tb_mux4.vhdl failed with 1 errors.
+# Compile of tb_program_counter.vhdl failed with 1 errors.
+# Compile of tb_regfile.vhdl failed with 1 errors.
+# Compile of tb_rom.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_template.vhdl failed with 1 errors.
+# Compile of lib_mips32.vhdl was successful.
+# 26 compiles, 17 failed with 18 errors. 
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+dataset reload -f
+# wrong number of args for "dataset info".
+# Usage: dataset info <option> <dataset_name>
+# Compile of control_unit.vhdl failed with 2 errors.
+recompile
+# invalid command name "recompile"
+history
+#     93  vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/program_counter.vhdl
+#     94  vsim -voptargs=+acc work.program_counter
+#     95  quit -sim
+#     96  vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/program_counter.vhdl
+#     97  vsim -voptargs=+acc work.program_counter
+#     98  force -freeze sim:/program_counter/rst 1 0
+#     99  run 100ps
+#    100  force -freeze sim:/program_counter/rst 0 0
+#    101  force -freeze sim:/program_counter/clk 0 0, 1 {50 ps} -r 100
+#    102  force -freeze sim:/program_counter/pc_dest 00000000000000000000000000001000 0
+#    103  add wave -position insertpoint  \
+# 	sim:/program_counter/pc_dest \
+# 	sim:/program_counter/clk \
+# 	sim:/program_counter/pc_en \
+# 	sim:/program_counter/rst \
+# 	sim:/program_counter/pc_addr \
+# 	sim:/program_counter/ip
+#    104  run 100ps
+#    105  force -freeze sim:/program_counter/pc_en 1 0
+#    106  run 100ps
+#    107  quit -sim
+#    108  vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/signext.vhdl
+#    109  vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/ram.vhdl
+#    110  vsim -voptargs=+acc work.data_mem
+#    111  force -freeze sim:/data_mem/clk 0 0, 1 {50 ps} -r 100
+#    112  force -freeze sim:/data_mem/write_addr 0000000000 0
+#    113  force -freeze sim:/data_mem/write_en 1 0
+#    114  force -freeze sim:/data_mem/d_in 00000000111111110000000011111111 0
+#    115  add wave -position insertpoint  \
+# 	sim:/data_mem/read_addr \
+# 	sim:/data_mem/write_addr \
+# 	sim:/data_mem/d_in \
+# 	sim:/data_mem/d_out \
+# 	sim:/data_mem/ram
+#    116  run 100ps
+#    117  force -freeze sim:/data_mem/write_en 0 0
+#    118  force -freeze sim:/data_mem/read_en 1 0
+#    119  force -freeze sim:/data_mem/read_addr 0000000000 0
+#    120  run 100ps
+#    121  quit -sim
+#    122  vsim -voptargs=+acc work.inst_reg
+#    123  force -freeze sim:/inst_reg/inst_in 00000000000000001111111111111111 0
+#    124  force -freeze sim:/inst_reg/clk 0 0, 1 {50 ps} -r 100
+#    125  add wave -position insertpoint  \
+# 	sim:/inst_reg/inst_in \
+# 	sim:/inst_reg/ir_write \
+# 	sim:/inst_reg/clk \
+# 	sim:/inst_reg/inst_out \
+# 	sim:/inst_reg/inst
+#    126  run 100ps
+#    127  quit -sim
+#    128  vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/inst_reg.vhdl
+#    129  vsim -voptargs=+acc work.inst_reg
+#    130  force -freeze sim:/inst_reg/inst_in 32'hFFFFFFFF 0
+#    131  force -freeze sim:/inst_reg/clk 0 0, 1 {50 ps} -r 100
+#    132  run 100ps
+#    133  add wave -position insertpoint  \
+# 	sim:/inst_reg/inst_in \
+# 	sim:/inst_reg/ir_write \
+# 	sim:/inst_reg/clk \
+# 	sim:/inst_reg/inst_out \
+# 	sim:/inst_reg/inst
+#    134  run 100ps
+#    135  force -freeze sim:/inst_reg/ir_write 1 0
+#    136  run 100ps
+#    137  force -freeze sim:/inst_reg/ir_write 0 0
+#    138  run 100ps
+#    139  quit -sim
+#    140  dataset reload -f
+#    141  recompile
+#    142  history
+recompile
+# invalid command name "recompile"
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl failed with 2 errors.
+# Compile of control_unit.vhdl was successful with warnings.
+# Compile of control_unit.vhdl was successful with warnings.
+# Compile of control_unit.vhdl was successful.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl was successful.
+vsim -voptargs=+acc work.control
+# vsim -voptargs=+acc work.control 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.control(behav)
+view -new wave
+# -new not supported on PE
+add wave -position insertpoint  \
+sim:/control/pc_write_cond \
+sim:/control/pc_write \
+sim:/control/pc_src \
+sim:/control/mem_to_reg \
+sim:/control/mem_write \
+sim:/control/mem_read \
+sim:/control/ir_write \
+sim:/control/reg_dest \
+sim:/control/reg_write \
+sim:/control/alu_src_a \
+sim:/control/alu_src_b \
+sim:/control/alu_op \
+sim:/control/opcode \
+sim:/control/clk \
+sim:/control/s_pc_write_cond \
+sim:/control/s_pc_write \
+sim:/control/s_pc_src \
+sim:/control/s_mem_addr \
+sim:/control/s_mem_toreg \
+sim:/control/s_mem_write \
+sim:/control/s_reg_writeinst \
+sim:/control/s_reg_dest \
+sim:/control/s_reg_write \
+sim:/control/s_alu_src_a \
+sim:/control/s_ir_write \
+sim:/control/s_alu_src_b \
+sim:/control/s_alu_op \
+sim:/control/clkstate \
+sim:/control/itype \
+sim:/control/memwb
+force -freeze sim:/control/opcode 000000 0
+force -freeze sim:/control/clk 0 0, 1 {50 ps} -r 100
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+quit -sim

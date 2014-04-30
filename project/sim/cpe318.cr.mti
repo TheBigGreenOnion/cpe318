@@ -9,12 +9,28 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 ** Error: /home/anti/scratch/cpe318/project/alu.vhdl(7): (vcom-1136) Unknown identifier "std_logic".
 ** Error: /home/anti/scratch/cpe318/project/alu.vhdl(10): near "architecture": expecting ';'
 
-} {5.0 11.0} {}} /home/anti/scratch/cpe318/project/tb_mux4.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mux4.vhdl
+} {5.0 11.0} {}} /home/anti/scratch/cpe318/project/inst_reg.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/inst_reg.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity inst_reg
+-- Compiling architecture behav of inst_reg
+
+} {} {}} /home/anti/scratch/cpe318/project/tb_mux4.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mux4.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 ** Error: /home/anti/scratch/cpe318/project/tb_mux4.vhdl(1): (vcom-1491) Empty source files.
 
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/mux2.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mux2.vhdl
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/lib_mips32.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/lib_mips32.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package lib_mips32
+
+} {} {}} /home/anti/scratch/cpe318/project/mux2.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mux2.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -50,15 +66,25 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
+-- Loading package lib_mips32
 -- Compiling entity code_mem
-** Error: /home/anti/scratch/cpe318/project/rom.vhdl(7): near ")": syntax error
+** Error: /home/anti/scratch/cpe318/project/rom.vhdl(8): near ")": syntax error
 
-} {8.0 9.0} {}} /home/anti/scratch/cpe318/project/tb_alu.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_alu.vhdl
+} {9.0 10.0} {}} /home/anti/scratch/cpe318/project/program_counter.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/program_counter.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity program_counter
+-- Compiling architecture behav of program_counter
+
+} {} {}} /home/anti/scratch/cpe318/project/tb_alu.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_alu.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 ** Error: /home/anti/scratch/cpe318/project/tb_alu.vhdl(1): (vcom-1491) Empty source files.
 
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/ram.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/ram.vhdl {2 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -66,51 +92,10 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package NUMERIC_STD
 -- Compiling entity data_mem
 -- Compiling architecture behav of data_mem
+** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(21): (vcom-1272) Length of expected is 8; length of actual is 32.
+** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(23): (vcom-1272) Length of expected is 32; length of actual is 8.
 
-} {} {}} /home/anti/scratch/cpe318/project/control_unit.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/control_unit.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity control
--- Compiling architecture behav of control
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(73): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(77): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(79): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(81): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(84): (vcom-1136) Unknown identifier "add".
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(84): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(85): Enumeration literal "SUB" is type std.STANDARD.CHARACTER; expecting type std.STANDARD.BOOLEAN.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(85): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(86): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(87): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(88): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(89): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(93): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(93): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(94): String literal found where non-array type ieee.std_logic_1164.STD_LOGIC was expected.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(94): near "others": syntax error
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(97): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(99): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(101): Illegal target for signal assignment.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(101): (vcom-1136) Unknown identifier "s_mem_read".
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(101): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(101): Enumeration literal '0' is not of type (error).
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(102): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(106): Illegal target for signal assignment.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(106): (vcom-1136) Unknown identifier "s_mem_to_reg".
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(106): Illegal sequential statement.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(106): Enumeration literal '0' is not of type (error).
-** Warning: [14] /home/anti/scratch/cpe318/project/control_unit.vhdl(84): (vcom-1272) Length of expected is 2; length of actual is 3.
-** Warning: [14] /home/anti/scratch/cpe318/project/control_unit.vhdl(85): (vcom-1272) Length of expected is 2; length of actual is 3.
-** Warning: [14] /home/anti/scratch/cpe318/project/control_unit.vhdl(86): (vcom-1272) Length of expected is 2; length of actual is 3.
-** Warning: [14] /home/anti/scratch/cpe318/project/control_unit.vhdl(87): (vcom-1272) Length of expected is 2; length of actual is 3.
-** Warning: [14] /home/anti/scratch/cpe318/project/control_unit.vhdl(88): (vcom-1272) Length of expected is 2; length of actual is 3.
-** Warning: [14] /home/anti/scratch/cpe318/project/control_unit.vhdl(89): (vcom-1272) Length of expected is 2; length of actual is 3.
-** Error: /home/anti/scratch/cpe318/project/control_unit.vhdl(111): VHDL Compiler exiting
-
-} {9.0 36.0 42.0 43.0} {}} /home/anti/scratch/cpe318/project/mips.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mips.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/mips.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mips.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -120,20 +105,35 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling architecture structural of mips
 ** Error: /home/anti/scratch/cpe318/project/mips.vhdl(11): near ")": expecting ':'
 
-} {9.0 10.0} {}} /home/anti/scratch/cpe318/project/alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/alu_control.vhdl
+} {9.0 10.0} {}} /home/anti/scratch/cpe318/project/signext.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/signext.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
+-- Compiling entity signext
+-- Compiling architecture behav of signext
+
+} {} {}} /home/anti/scratch/cpe318/project/alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/alu_control.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package lib_mips32
 -- Compiling entity alu_control
 -- Compiling architecture behav of alu_control
-** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(16): Illegal target for signal assignment.
-** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(16): Bad target (entity "alu_control") for signal assignment.
-** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(16): near "else": expecting ';' or ','
-** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(28): near "else": expecting ';' or ','
-** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(59): VHDL Compiler exiting
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(17): Illegal target for signal assignment.
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(17): Bad target (entity "alu_control") for signal assignment.
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(18): Cannot read output "alu_ctrl".
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(18): Choice in selected signal assignment must be locally static.
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(18): near "=": expecting ';' or ','
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(31): near "else": expecting ';' or ','
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(60): Illegal target for signal assignment.
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(60): (vcom-1136) Unknown identifier "shift_sel".
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(60): near "|": expecting ';'
+** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(64): VHDL Compiler exiting
 
-} {8.0 13.0} {}} /home/anti/scratch/cpe318/project/tb_rom.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_rom.vhdl
+} {10.0 20.0} {}} /home/anti/scratch/cpe318/project/tb_rom.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_rom.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 ** Error: /home/anti/scratch/cpe318/project/tb_rom.vhdl(1): (vcom-1491) Empty source files.
