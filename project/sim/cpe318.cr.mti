@@ -1,15 +1,14 @@
-/home/anti/scratch/cpe318/project/alu.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/alu.vhdl
+/home/anti/scratch/cpe318/project/alu.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/alu.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package lib_mips32
 -- Compiling entity alu
-** Error: /home/anti/scratch/cpe318/project/alu.vhdl(4): (vcom-1136) Unknown identifier "std_logic_vector".
-** Error: /home/anti/scratch/cpe318/project/alu.vhdl(5): (vcom-1136) Unknown identifier "XXX".
-** Error: /home/anti/scratch/cpe318/project/alu.vhdl(5): (vcom-1136) Unknown identifier "std_logic_vector".
-** Error: /home/anti/scratch/cpe318/project/alu.vhdl(6): (vcom-1136) Unknown identifier "std_logic_vector".
-** Error: /home/anti/scratch/cpe318/project/alu.vhdl(7): (vcom-1136) Unknown identifier "std_logic".
-** Error: /home/anti/scratch/cpe318/project/alu.vhdl(10): near "architecture": expecting ';'
+-- Compiling architecture behav of alu
 
-} {5.0 11.0} {}} /home/anti/scratch/cpe318/project/inst_reg.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/inst_reg.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/inst_reg.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/inst_reg.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -60,7 +59,7 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity mux4
 -- Compiling architecture behav of mux4
 
-} {} {}} /home/anti/scratch/cpe318/project/rom.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/rom.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/rom.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/rom.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -68,9 +67,9 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package NUMERIC_STD
 -- Loading package lib_mips32
 -- Compiling entity code_mem
-** Error: /home/anti/scratch/cpe318/project/rom.vhdl(8): near ")": syntax error
+-- Compiling architecture behav of code_mem
 
-} {9.0 10.0} {}} /home/anti/scratch/cpe318/project/program_counter.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/program_counter.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/program_counter.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/program_counter.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -84,7 +83,17 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 ** Error: /home/anti/scratch/cpe318/project/tb_alu.vhdl(1): (vcom-1491) Empty source files.
 
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/ram.vhdl {2 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/control_unit.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/control_unit.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package lib_mips32
+-- Compiling entity control
+-- Compiling architecture behav of control
+
+} {} {}} /home/anti/scratch/cpe318/project/ram.vhdl {2 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -95,17 +104,7 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 ** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(21): (vcom-1272) Length of expected is 8; length of actual is 32.
 ** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(23): (vcom-1272) Length of expected is 32; length of actual is 8.
 
-} {} {}} /home/anti/scratch/cpe318/project/mips.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mips.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity mips
--- Compiling architecture structural of mips
-** Error: /home/anti/scratch/cpe318/project/mips.vhdl(11): near ")": expecting ':'
-
-} {9.0 10.0} {}} /home/anti/scratch/cpe318/project/signext.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/signext.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/signext.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/signext.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO

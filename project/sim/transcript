@@ -822,3 +822,539 @@ run 100ps
 run 100ps
 run 100ps
 quit -sim
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl was successful.
+vsim -voptargs=+acc work.control
+# vsim -voptargs=+acc work.control 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.control(behav)
+add wave -position insertpoint  \
+sim:/control/pc_write_cond \
+sim:/control/pc_write \
+sim:/control/mem_to_reg \
+sim:/control/mem_write \
+sim:/control/mem_read \
+sim:/control/ir_write \
+sim:/control/reg_dest \
+sim:/control/reg_write \
+sim:/control/alu_src_a \
+sim:/control/alu_src_b \
+sim:/control/pc_src \
+sim:/control/alu_op \
+sim:/control/opcode \
+sim:/control/clk \
+sim:/control/s_pc_write_cond \
+sim:/control/s_pc_write \
+sim:/control/s_mem_addr \
+sim:/control/s_mem_to_reg \
+sim:/control/s_mem_write \
+sim:/control/s_mem_read \
+sim:/control/s_reg_writeinst \
+sim:/control/s_reg_dest \
+sim:/control/s_reg_write \
+sim:/control/s_alu_src_a \
+sim:/control/s_ir_write \
+sim:/control/s_alu_src_b \
+sim:/control/s_pc_src \
+sim:/control/s_alu_op \
+sim:/control/clkstate \
+sim:/control/itype \
+sim:/control/memwb
+force -freeze sim:/control/clk 0 0, 1 {50 ps} -r 100
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+# WARNING: No extended dataflow license exists
+quit -sim
+# Compile of control_unit.vhdl was successful.
+# Compile of alu.vhdl failed with 1 errors.
+# Compile of alu.vhdl failed with 1 errors.
+# Compile of alu.vhdl failed with 1 errors.
+# Compile of alu.vhdl failed with 1 errors.
+# Compile of alu.vhdl was successful.
+# Compile of lib_mips32.vhdl was successful.
+# Compile of alu.vhdl was successful.
+# Compile of alu_control.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl was successful.
+# Compile of inst_reg.vhdl was successful.
+# Compile of lshift2.vhdl was successful.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mux2.vhdl was successful.
+# Compile of mux4.vhdl was successful.
+# Compile of program_counter.vhdl was successful.
+# Compile of ram.vhdl was successful with warnings.
+# Compile of regfile.vhdl was successful.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of signext.vhdl was successful.
+# Compile of tb_alu.vhdl failed with 1 errors.
+# Compile of tb_alu_control.vhdl failed with 1 errors.
+# Compile of tb_inst_reg.vhdl failed with 1 errors.
+# Compile of tb_lshift2.vhdl failed with 1 errors.
+# Compile of tb_mips.vhdl failed with 1 errors.
+# Compile of tb_mux2.vhdl failed with 1 errors.
+# Compile of tb_mux4.vhdl failed with 1 errors.
+# Compile of tb_program_counter.vhdl failed with 1 errors.
+# Compile of tb_regfile.vhdl failed with 1 errors.
+# Compile of tb_rom.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_template.vhdl failed with 1 errors.
+# Compile of lib_mips32.vhdl was successful.
+# 26 compiles, 15 failed with 15 errors. 
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl failed with 1 errors.
+# Compile of mips.vhdl was successful.
+vsim -voptargs=+acc work.mips
+# vsim -voptargs=+acc work.mips 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.mips(structural)
+# Loading work.alu(behav)
+# Loading work.control(behav)
+# Loading work.program_counter(behav)
+# ** Error: (vsim-3173) Entity '/home/anti/scratch/cpe318/project/sim/work.code_mem' has no architecture.
+# Load interrupted
+# Error loading design
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl failed with 1 errors.
+
+
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl failed with 1 errors.
+# Compile of rom.vhdl was successful.
+# Compile of mips.vhdl was successful.
+# Compile of alu.vhdl was successful.
+# Compile of alu_control.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl was successful.
+# Compile of inst_reg.vhdl was successful.
+# Compile of lshift2.vhdl was successful.
+# Compile of mips.vhdl was successful.
+# Compile of mux2.vhdl was successful.
+# Compile of mux4.vhdl was successful.
+# Compile of program_counter.vhdl was successful.
+# Compile of ram.vhdl was successful with warnings.
+# Compile of regfile.vhdl was successful.
+# Compile of rom.vhdl was successful.
+# Compile of signext.vhdl was successful.
+# Compile of tb_alu.vhdl failed with 1 errors.
+# Compile of tb_alu_control.vhdl failed with 1 errors.
+# Compile of tb_inst_reg.vhdl failed with 1 errors.
+# Compile of tb_lshift2.vhdl failed with 1 errors.
+# Compile of tb_mips.vhdl failed with 1 errors.
+# Compile of tb_mux2.vhdl failed with 1 errors.
+# Compile of tb_mux4.vhdl failed with 1 errors.
+# Compile of tb_program_counter.vhdl failed with 1 errors.
+# Compile of tb_regfile.vhdl failed with 1 errors.
+# Compile of tb_rom.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_template.vhdl failed with 1 errors.
+# Compile of lib_mips32.vhdl was successful.
+# 26 compiles, 13 failed with 13 errors. 
+vsim -voptargs=+acc work.mips
+# vsim -voptargs=+acc work.mips 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.mips(structural)
+# Loading work.alu(behav)
+# Loading work.control(behav)
+# Loading work.program_counter(behav)
+# Loading work.code_mem(behav)
+# Loading work.mux2(behav)
+# Loading work.mux4(behav)
+# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
+# This port will contribute value (U) to the signal network.
+force -freeze sim:/mips/g_clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/mips/g_rst 1 0
+run 1 ps
+add wave -position insertpoint  \
+sim:/mips/g_clk \
+sim:/mips/g_rst \
+sim:/mips/b_alu_out \
+sim:/mips/c_pc_write \
+sim:/mips/c_pc_src \
+sim:/mips/b_pc_dest \
+sim:/mips/b_pc_addr
+force -freeze sim:/mips/g_rst 0 0
+run 1 ps
+run 48 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+restart
+# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/mips/g_clk \
+sim:/mips/g_rst \
+sim:/mips/b_alu_a \
+sim:/mips/b_alu_b \
+sim:/mips/b_alu_out \
+sim:/mips/c_alu_src_a \
+sim:/mips/c_alu_src_b
+force -freeze sim:/mips/g_clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/mips/g_rst 1 0
+run 1 ps
+force -freeze sim:/mips/g_rst 0 0
+run 1 ps
+run 48 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+run 50 ps
+quit -sim
+# Compile of alu.vhdl was successful.
+# Compile of alu_control.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl was successful.
+# Compile of inst_reg.vhdl was successful.
+# Compile of lshift2.vhdl was successful.
+# Compile of mips.vhdl was successful.
+# Compile of mux2.vhdl was successful.
+# Compile of mux4.vhdl was successful.
+# Compile of program_counter.vhdl failed with 1 errors.
+# Compile of ram.vhdl was successful with warnings.
+# Compile of regfile.vhdl was successful.
+# Compile of rom.vhdl was successful.
+# Compile of signext.vhdl was successful.
+# Compile of tb_alu.vhdl failed with 1 errors.
+# Compile of tb_alu_control.vhdl failed with 1 errors.
+# Compile of tb_inst_reg.vhdl failed with 1 errors.
+# Compile of tb_lshift2.vhdl failed with 1 errors.
+# Compile of tb_mips.vhdl failed with 1 errors.
+# Compile of tb_mux2.vhdl failed with 1 errors.
+# Compile of tb_mux4.vhdl failed with 1 errors.
+# Compile of tb_program_counter.vhdl failed with 1 errors.
+# Compile of tb_regfile.vhdl failed with 1 errors.
+# Compile of tb_rom.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_template.vhdl failed with 1 errors.
+# Compile of lib_mips32.vhdl was successful.
+# 26 compiles, 14 failed with 14 errors. 
+# Compile of program_counter.vhdl failed with 1 errors.
+# Compile of program_counter.vhdl was successful.
+# Compile of mips.vhdl was successful.
+vsim -voptargs=+acc work.mips
+# vsim -voptargs=+acc work.mips 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.mips(structural)
+# Loading work.alu(behav)
+# Loading work.control(behav)
+# Loading work.program_counter(behav)
+# Loading work.code_mem(behav)
+# Loading work.mux2(behav)
+# Loading work.mux4(behav)
+# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
+# This port will contribute value (U) to the signal network.
+quit -sim
+# Compile of alu.vhdl was successful.
+# Compile of alu_control.vhdl failed with 1 errors.
+# Compile of control_unit.vhdl was successful.
+# Compile of inst_reg.vhdl was successful.
+# Compile of lshift2.vhdl was successful.
+# Compile of mips.vhdl was successful.
+# Compile of mux2.vhdl was successful.
+# Compile of mux4.vhdl was successful.
+# Compile of program_counter.vhdl was successful.
+# Compile of ram.vhdl was successful with warnings.
+# Compile of regfile.vhdl was successful.
+# Compile of rom.vhdl was successful.
+# Compile of signext.vhdl was successful.
+# Compile of tb_alu.vhdl failed with 1 errors.
+# Compile of tb_alu_control.vhdl failed with 1 errors.
+# Compile of tb_inst_reg.vhdl failed with 1 errors.
+# Compile of tb_lshift2.vhdl failed with 1 errors.
+# Compile of tb_mips.vhdl failed with 1 errors.
+# Compile of tb_mux2.vhdl failed with 1 errors.
+# Compile of tb_mux4.vhdl failed with 1 errors.
+# Compile of tb_program_counter.vhdl failed with 1 errors.
+# Compile of tb_regfile.vhdl failed with 1 errors.
+# Compile of tb_rom.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_template.vhdl failed with 1 errors.
+# Compile of lib_mips32.vhdl was successful.
+# 26 compiles, 13 failed with 13 errors. 
+vsim -voptargs=+acc work.mips
+# vsim -voptargs=+acc work.mips 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.mips(structural)
+# Loading work.alu(behav)
+# Loading work.control(behav)
+# Loading work.program_counter(behav)
+# Loading work.code_mem(behav)
+# Loading work.mux2(behav)
+# Loading work.mux4(behav)
+# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/mips/g_clk \
+sim:/mips/g_rst \
+sim:/mips/b_alu_a \
+sim:/mips/b_alu_b \
+sim:/mips/b_alu_out \
+sim:/mips/c_pc_write \
+sim:/mips/c_pc_src \
+sim:/mips/b_pc_dest \
+sim:/mips/b_pc_addr \
+sim:/mips/b_rom_inst
+force -freeze sim:/mips/g_clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/mips/g_rst 1 0
+run 1 ps
+force -freeze sim:/mips/g_rst 0 0
+run 1 ps
+run 48ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+# Compile of mips.vhdl was successful.
+quit -sim
+# Compile of program_counter.vhdl was successful.
+# Compile of mips.vhdl was successful.
+vsim -voptargs=+acc work.mips
+# vsim -voptargs=+acc work.mips 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.mips(structural)
+# Loading work.alu(behav)
+# Loading work.control(behav)
+# Loading work.program_counter(behav)
+# Loading work.code_mem(behav)
+# Loading work.mux2(behav)
+# Loading work.mux4(behav)
+# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/mips/g_clk \
+sim:/mips/g_rst \
+sim:/mips/b_alu_a \
+sim:/mips/b_alu_b \
+sim:/mips/b_alu_out \
+sim:/mips/c_alu_src_a \
+sim:/mips/c_alu_src_b \
+sim:/mips/c_pc_write \
+sim:/mips/b_pc_dest \
+sim:/mips/b_pc_addr
+force -freeze sim:/mips/g_clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/mips/g_rst 1 0
+run 1ps
+force -freeze sim:/mips/g_rst 0 0
+run 1ps
+run 48ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+run 100ps
+quit -sim
+# Compile of program_counter.vhdl failed with 1 errors.
+# Compile of program_counter.vhdl was successful.
+# Compile of mips.vhdl was successful.
+vsim -voptargs=+acc work.mips
+# vsim -voptargs=+acc work.mips 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.lib_mips32
+# Loading work.mips(structural)
+# Loading work.alu(behav)
+# Loading work.control(behav)
+# Loading work.program_counter(behav)
+# Loading work.code_mem(behav)
+# Loading work.mux2(behav)
+# Loading work.mux4(behav)
+# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
+# This port will contribute value (U) to the signal network.
+add wave -position insertpoint  \
+sim:/mips/g_clk \
+sim:/mips/g_rst \
+sim:/mips/b_alu_a \
+sim:/mips/b_alu_b \
+sim:/mips/b_alu_out \
+sim:/mips/c_pc_write \
+sim:/mips/c_pc_src \
+sim:/mips/b_pc_dest \
+sim:/mips/b_pc_addr
+force -freeze sim:/mips/g_clk 0 0, 1 {50 ps} -r 100
+force -freeze sim:/mips/g_rst 1 0
+run 50ps
+force -freeze sim:/mips/g_rst 0 0
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+force -freeze sim:/mips/g_rst 1 0
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+force -freeze sim:/mips/g_rst 0 0
+force -freeze sim:/mips/g_rst 1 0
+force -freeze sim:/mips/g_rst 1 0
+force -freeze sim:/mips/g_rst 0 0
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+# WARNING: No extended dataflow license exists
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+run 50ps
+quit -sim

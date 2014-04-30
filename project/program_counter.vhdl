@@ -18,7 +18,7 @@ begin
     begin
         if (rst = '1') then
             ip <= (others => '0');
-        elsif (rising_edge(clk)) then
+        elsif falling_edge(clk) then 
             if (pc_en = '1') then
                 ip <= pc_dest;
             end if;

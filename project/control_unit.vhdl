@@ -4,11 +4,11 @@ use ieee.numeric_std.all;
 use work.lib_mips32.all;
 
 entity control is
-    port ( pc_write_cond, pc_write, pc_src : out std_logic;
+    port ( pc_write_cond, pc_write : out std_logic;
         mem_to_reg, mem_write, mem_read : out std_logic;
         ir_write, reg_dest, reg_write : out std_logic;
         alu_src_a : out std_logic;
-        alu_src_b : out std_logic_vector(1 downto 0);
+        alu_src_b, pc_src : out std_logic_vector(1 downto 0);
         alu_op : out std_logic_vector(2 downto 0);
         opcode : in std_logic_vector(5 downto 0);
         clk : in std_logic);
@@ -16,20 +16,20 @@ end entity control;
 
 
 architecture behav of control is 
-    signal s_pc_write_cond, s_pc_write, s_pc_src : std_logic;
-    signal s_mem_addr, s_mem_toreg, s_mem_write : std_logic;
+    signal s_pc_write_cond, s_pc_write : std_logic;
+    signal s_mem_addr, s_mem_to_reg, s_mem_write, s_mem_read : std_logic;
     signal s_reg_writeinst, s_reg_dest, s_reg_write : std_logic;
-    signal s_alu_src_a, s_ir_write : std_logic;
-    signal s_alu_src_b : std_logic_vector(1 downto 0);
+    signal s_alu_src_a : std_logic;
+    signal s_alu_src_b, s_pc_src : std_logic_vector(1 downto 0);
     signal s_alu_op : std_logic_vector(2 downto 0);
     
-    type state is (IF_0, ID_0, EX_0, MEM_0, REGWB_0);
-    type inst is (R, I, J, B);
-    type memaccess is (load, store, none);
+    type state_t is (IF_0, ID_0, EX_0, MEM_0, REGWB_0);
+    type inst_t is (R, I, J, B);
+    type memaccess_t is (load, store, none);
 
-    signal clkstate : state := IF_0;
-    signal itype : inst;
-    signal memwb : memaccess;
+    signal clkstate : state_t := IF_0;
+    signal itype : inst_t;
+    signal memwb : memaccess_t;
     
 begin
 
@@ -56,6 +56,16 @@ begin
         s_reg_dest <= '1' when R | B,
                       '0' when others;
     
+    s_pc_write_cond <= '1'; --XXX PLACEHOLDER
+    with itype select
+        s_pc_write <= '1' when B | J,
+                      '0' when others;
+
+    s_mem_read <= '1'  when memwb = load else '0';
+    s_mem_write <= '1'  when memwb = store else '0';
+
+    s_pc_src <= "10" when itype = J else
+                "01";
     -- Determine signals using opcode 
     with opcode select
         s_alu_op <= 
@@ -99,7 +109,7 @@ begin
                 alu_op <= ALU_OP_ADD;
                 
                 pc_write <= '1';
-                pc_src <= '0';
+                pc_src <= "00";
                 ir_write <= '1';
 
             -- Decode
@@ -122,22 +132,21 @@ begin
                 alu_src_b <= s_alu_src_b;
                 alu_op <= s_alu_op;         
 
---                           -- Writeback
---            elsif (clkstate = MEM_0) then
---                s_pc_src <= "10" when itype = J else
---                            "01";
---                -- 00 reserved for automatic PC increment
---
---                s_pc_write_cond <= '1' when itype = B else '0';
---                
---                s_pc_write <= '1' when (itype = B | J) else '0';
---
---                s_mem_read <= '1' when memwb = load else '0';
---                s_mem_write <= '1' when memwb = store else '0';
---
---            -- RegWrite
---            elsif (clkstate = REGWB_0) then
---                s_mem_to_reg <= '1' when memwb = load else '0';
+            -- Writeback
+            elsif (clkstate = MEM_0) then
+                pc_src <= s_pc_src;
+                -- 00 reserved for automatic PC increment
+
+                pc_write_cond <= s_pc_write_cond; -- '1' when itype = B else '0';
+               
+                pc_write <= s_pc_write; -- '1' when (itype = B | J) else '0';
+
+                mem_read <= s_mem_read; -- '1' when memwb = load else '0';
+                mem_write <= s_mem_write; --'1' when memwb = store else '0';
+
+            -- RegWrite
+            elsif (clkstate = REGWB_0) then
+                mem_to_reg <= s_mem_to_reg; -- '1' when memwb = load else '0';
             end if;
         end if;
     end process;

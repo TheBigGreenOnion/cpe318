@@ -1,16 +1,19 @@
--- alu
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.lib_mips32.all;
 
 entity alu is
     port (a,b : in std_logic_vector(31 downto 0);
-        op : in std_logic_vector(XXX downto 0);
+--        op : in std_logic_vector(XXX downto 0);
         result : out std_logic_vector(31 downto 0);
         zf : out std_logic);
-end entity alu
+end entity alu;
 
 architecture behav of alu is
-    signal mult, div : std_logic_vector(63 downto 0);
-    signal sub, sum, shiftra, shiftl, shiftr, orl, andl, xorl, norl : std_logic_vector(31 downto 0);
-
-
-end architecture behav
+    signal res_t : signed(31 downto 0);
+begin
+    res_t <= signed(a) + signed(b);
+    result <= std_logic_vector(res_t);
+end architecture behav;
 

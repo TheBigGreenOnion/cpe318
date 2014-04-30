@@ -3,389 +3,486 @@ K3
 13
 cModel Technology
 d/opt/altera/13.1/modelsim_ase
+Ealu
+Z0 w1398888594
+Z1 DPx4 work 10 lib_mips32 0 22 bCU<ac<aSkdYmE]QVdIJO2
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 d/home/anti/scratch/cpe318/project/sim
+Z6 8/home/anti/scratch/cpe318/project/alu.vhdl
+Z7 F/home/anti/scratch/cpe318/project/alu.vhdl
+l0
+L6
+V:ZhkLaiKfB9bgU20BOR]_3
+Z8 OV;C;10.1d;51
+32
+Z9 !s108 1398890840.894579
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/alu.vhdl|
+Z11 !s107 /home/anti/scratch/cpe318/project/alu.vhdl|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+!s100 3>PIT<hEbH>V^R^8b_@2l0
+!i10b 1
+Abehav
+R1
+R2
+R3
+R4
+DEx4 work 3 alu 0 22 :ZhkLaiKfB9bgU20BOR]_3
+l15
+L13
+V^A3l1KGkd4O^8>[8AKCTQ0
+R8
+32
+R9
+R10
+R11
+R12
+R13
+!s100 LE<E]ER;OEGMmkEjc6;mH2
+!i10b 1
 Ealu_control
 w1398823182
-Z0 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-Z1 DPx4 work 10 lib_mips32 0 22 bCU<ac<aSkdYmE]QVdIJO2
-Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 d/home/anti/scratch/cpe318/project/sim
+R2
+R1
+R3
+R4
+R5
 8/home/anti/scratch/cpe318/project/alu_control.vhdl
 F/home/anti/scratch/cpe318/project/alu_control.vhdl
 l0
 L5
 VV]ZDmPgOYgcAd=^ZeQ8TP3
-Z5 OV;C;10.1d;51
+R8
 32
-Z6 o-work work -2002 -explicit -O0
-Z7 tExplicit 1
-!s100 k0][DI_:bkbC>Y=@3X:ZX0
-!i10b 1
-!s108 1398825299.676564
-!s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/alu_control.vhdl|
-!s107 /home/anti/scratch/cpe318/project/alu_control.vhdl|
-Econtrol
-Z8 w1398827966
-R1
-Z9 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
-R2
-R3
-R4
-Z10 8/home/anti/scratch/cpe318/project/control_unit.vhdl
-Z11 F/home/anti/scratch/cpe318/project/control_unit.vhdl
-l0
-L6
-V63XZ02?R29>U7?[b4AFJ_0
-!s100 oP]:i@4hb4I0i<X`7XSh=2
-R5
-32
-!i10b 1
-Z12 !s108 1398827973.365413
-Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/control_unit.vhdl|
-Z14 !s107 /home/anti/scratch/cpe318/project/control_unit.vhdl|
-R6
-R7
-Abehav
-R1
-R9
-R2
-R3
-Z15 DEx4 work 7 control 0 22 63XZ02?R29>U7?[b4AFJ_0
-l34
-L18
-V4RbW5dhVJUR8o>[b?zAPf3
-!s100 2`z@IfooR85LzIe[=T6o93
-R5
-32
-!i10b 1
 R12
 R13
-R14
-R6
-R7
-Edata_mem
-Z16 w1398812154
-R9
+!s100 k0][DI_:bkbC>Y=@3X:ZX0
+!i10b 1
+!s108 1398890840.938131
+!s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/alu_control.vhdl|
+!s107 /home/anti/scratch/cpe318/project/alu_control.vhdl|
+Ecode_mem
+Z14 w1398889560
+R1
 R2
 R3
 R4
-Z17 8/home/anti/scratch/cpe318/project/ram.vhdl
-Z18 F/home/anti/scratch/cpe318/project/ram.vhdl
+R5
+Z15 8/home/anti/scratch/cpe318/project/rom.vhdl
+Z16 F/home/anti/scratch/cpe318/project/rom.vhdl
+l0
+L7
+V=GUB5h4kfM_z9A2U9R<[j2
+R8
+32
+Z17 !s108 1398890841.321036
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/rom.vhdl|
+Z19 !s107 /home/anti/scratch/cpe318/project/rom.vhdl|
+R12
+R13
+!s100 PoSi>1Bn1XL2TEB6f<4^:0
+!i10b 1
+Abehav
+R1
+R2
+R3
+R4
+DEx4 work 8 code_mem 0 22 =GUB5h4kfM_z9A2U9R<[j2
+l18
+L14
+Ve@YkZandcUie2BM;`5gzf0
+R8
+32
+R17
+R18
+R19
+R12
+R13
+!s100 l1P_c]9::7QKETgCVlHM=3
+!i10b 1
+Econtrol
+Z20 w1398881956
+R1
+R2
+R3
+R4
+R5
+Z21 8/home/anti/scratch/cpe318/project/control_unit.vhdl
+Z22 F/home/anti/scratch/cpe318/project/control_unit.vhdl
+l0
+L6
+V[gmQ;eXiCedGQVYH:X[L@3
+R8
+32
+Z23 !s108 1398890840.980918
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/control_unit.vhdl|
+Z25 !s107 /home/anti/scratch/cpe318/project/control_unit.vhdl|
+R12
+R13
+!s100 oTn4GUCkza]OzEAPOV5_11
+!i10b 1
+Abehav
+R1
+R2
+R3
+R4
+DEx4 work 7 control 0 22 [gmQ;eXiCedGQVYH:X[L@3
+l34
+L18
+VM[]mIck85Y>m9[T_3z9N43
+R8
+32
+R23
+R24
+R25
+R12
+R13
+!s100 LIc=XTmG7X7MIFWRmBUQN1
+!i10b 1
+Edata_mem
+Z26 w1398812154
+R2
+R3
+R4
+R5
+Z27 8/home/anti/scratch/cpe318/project/ram.vhdl
+Z28 F/home/anti/scratch/cpe318/project/ram.vhdl
 l0
 L6
 V^fj:3c8?NUH?PTW^39zL?3
-R5
+R8
 32
-Z19 !s108 1398825300.549123
-Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/ram.vhdl|
-Z21 !s107 /home/anti/scratch/cpe318/project/ram.vhdl|
-R6
-R7
+Z29 !s108 1398890841.238725
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/ram.vhdl|
+Z31 !s107 /home/anti/scratch/cpe318/project/ram.vhdl|
+R12
+R13
 !s100 HDgoV;XB4WC]4]Cc^1_I51
 !i10b 1
 Abehav
-R9
 R2
 R3
+R4
 DEx4 work 8 data_mem 0 22 ^fj:3c8?NUH?PTW^39zL?3
 l16
 L13
 VNT5X;_Zmj1TAebB9aXPO=1
-R5
+R8
 32
-R19
-R20
-R21
-R6
-R7
+R29
+R30
+R31
+R12
+R13
 !s100 67i@f2;Nz9QPnT;H>DN?`0
 !i10b 1
 Einst_reg
-Z22 w1398710835
-R2
+Z32 w1398710835
 R3
 R4
-Z23 8/home/anti/scratch/cpe318/project/inst_reg.vhdl
-Z24 F/home/anti/scratch/cpe318/project/inst_reg.vhdl
+R5
+Z33 8/home/anti/scratch/cpe318/project/inst_reg.vhdl
+Z34 F/home/anti/scratch/cpe318/project/inst_reg.vhdl
 l0
 L4
 VR?z4;5`<:S:OAjnddHf9N1
-R5
+R8
 32
-Z25 !s108 1398825299.930310
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/inst_reg.vhdl|
-Z27 !s107 /home/anti/scratch/cpe318/project/inst_reg.vhdl|
-R6
-R7
+Z35 !s108 1398890841.026508
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/inst_reg.vhdl|
+Z37 !s107 /home/anti/scratch/cpe318/project/inst_reg.vhdl|
+R12
+R13
 !s100 8GcmBXP]@WaX`cfEM]J=]1
 !i10b 1
 Abehav
-R2
 R3
+R4
 DEx4 work 8 inst_reg 0 22 R?z4;5`<:S:OAjnddHf9N1
 l12
 L10
 VnF1^giL`UODT2YR5SjJS20
-R5
+R8
 32
-R25
-R26
-R27
-R6
-R7
+R35
+R36
+R37
+R12
+R13
 !s100 ]aP<=N:LzL>6K?_TL1Ql^2
 !i10b 1
 Plib_mips32
-R9
 R2
 R3
-w1398824451
 R4
+w1398824451
+R5
 8/home/anti/scratch/cpe318/project/lib_mips32.vhdl
 F/home/anti/scratch/cpe318/project/lib_mips32.vhdl
 l0
 L5
 VbCU<ac<aSkdYmE]QVdIJO2
-R5
+R8
 32
-R6
-R7
+R12
+R13
 !s100 XOckbfU]d:5]nD]b3CB1i0
 !i10b 1
-!s108 1398825301.971453
+!s108 1398890841.703089
 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/lib_mips32.vhdl|
 !s107 /home/anti/scratch/cpe318/project/lib_mips32.vhdl|
 Elshift2
-Z28 w1398632736
-R2
+Z38 w1398632736
 R3
 R4
-Z29 8/home/anti/scratch/cpe318/project/lshift2.vhdl
-Z30 F/home/anti/scratch/cpe318/project/lshift2.vhdl
+R5
+Z39 8/home/anti/scratch/cpe318/project/lshift2.vhdl
+Z40 F/home/anti/scratch/cpe318/project/lshift2.vhdl
 l0
 L4
 VP`kIal=_b]fKd[k6cVXHz3
-R5
+R8
 32
-Z31 !s108 1398825300.025193
-Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/lshift2.vhdl|
-Z33 !s107 /home/anti/scratch/cpe318/project/lshift2.vhdl|
-R6
-R7
+Z41 !s108 1398890841.059549
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/lshift2.vhdl|
+Z43 !s107 /home/anti/scratch/cpe318/project/lshift2.vhdl|
+R12
+R13
 !s100 E_<NQKh<nGdEo8VBNz>203
 !i10b 1
 Abehav
-R2
 R3
+R4
 DEx4 work 7 lshift2 0 22 P`kIal=_b]fKd[k6cVXHz3
 l10
 L9
 V2XfeCK0j]h?7d?J;::?6W0
-R5
+R8
 32
-R31
-R32
-R33
-R6
-R7
+R41
+R42
+R43
+R12
+R13
 !s100 BVYlQLA;QEGJNTUoS=G@o2
 !i10b 1
 Emips
-w1398705693
-R9
+Z44 w1398890763
+R1
 R2
 R3
 R4
-8/home/anti/scratch/cpe318/project/mips.vhdl
-F/home/anti/scratch/cpe318/project/mips.vhdl
-l0
-L5
-VmdaMWd88d0>4[o6f<hY^d0
 R5
+Z45 8/home/anti/scratch/cpe318/project/mips.vhdl
+Z46 F/home/anti/scratch/cpe318/project/mips.vhdl
+l0
+L6
+ViDC1]zi]6;`Tc:ib92lN]2
+!s100 ON8_KkoW`H59gcGS2c8oP0
+R8
 32
-R6
-R7
-!s100 K7C>L=dUlUId<6IN@zGg92
 !i10b 1
-!s108 1398825300.120110
-!s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/mips.vhdl|
-!s107 /home/anti/scratch/cpe318/project/mips.vhdl|
-Emux2
-Z34 w1398632169
+Z47 !s108 1398891520.023723
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/mips.vhdl|
+Z49 !s107 /home/anti/scratch/cpe318/project/mips.vhdl|
+R12
+R13
+Astructural
+R1
 R2
 R3
 R4
-Z35 8/home/anti/scratch/cpe318/project/mux2.vhdl
-Z36 F/home/anti/scratch/cpe318/project/mux2.vhdl
+Z50 DEx4 work 4 mips 0 22 iDC1]zi]6;`Tc:ib92lN]2
+l88
+L10
+Z51 VCUF9MS2:hleAG:LL2V6`U2
+Z52 !s100 SL6IIV>NW2WUG11@QbLEg1
+R8
+32
+!i10b 1
+R47
+R48
+R49
+R12
+R13
+Emux2
+Z53 w1398632169
+R3
+R4
+R5
+Z54 8/home/anti/scratch/cpe318/project/mux2.vhdl
+Z55 F/home/anti/scratch/cpe318/project/mux2.vhdl
 l0
 L4
 VTeYd<@bUV3U78oIB0cJdR2
-R5
+R8
 32
-Z37 !s108 1398825300.239318
-Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/mux2.vhdl|
-Z39 !s107 /home/anti/scratch/cpe318/project/mux2.vhdl|
-R6
-R7
+Z56 !s108 1398890841.133881
+Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/mux2.vhdl|
+Z58 !s107 /home/anti/scratch/cpe318/project/mux2.vhdl|
+R12
+R13
 !s100 ^@iEE7d6Z7VNScKiNEGJa2
 !i10b 1
 Abehav
-R2
 R3
+R4
 DEx4 work 4 mux2 0 22 TeYd<@bUV3U78oIB0cJdR2
 l11
 L10
 V^NNG@Z9ahdbUWIf?@O;lg0
-R5
+R8
 32
-R37
-R38
-R39
-R6
-R7
+R56
+R57
+R58
+R12
+R13
 !s100 bF^k41Z]WMjG9D?7RPA:I0
 !i10b 1
 Emux4
-Z40 w1398631584
-R2
+Z59 w1398631584
 R3
 R4
-Z41 8/home/anti/scratch/cpe318/project/mux4.vhdl
-Z42 F/home/anti/scratch/cpe318/project/mux4.vhdl
+R5
+Z60 8/home/anti/scratch/cpe318/project/mux4.vhdl
+Z61 F/home/anti/scratch/cpe318/project/mux4.vhdl
 l0
 L4
 VN5BUI0AoR:a>a7W:YiGc22
-R5
+R8
 32
-Z43 !s108 1398825300.331711
-Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/mux4.vhdl|
-Z45 !s107 /home/anti/scratch/cpe318/project/mux4.vhdl|
-R6
-R7
+Z62 !s108 1398890841.166270
+Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/mux4.vhdl|
+Z64 !s107 /home/anti/scratch/cpe318/project/mux4.vhdl|
+R12
+R13
 !s100 U8[TH``0]XPm:K`k2IKN72
 !i10b 1
 Abehav
-R2
 R3
+R4
 DEx4 work 4 mux4 0 22 N5BUI0AoR:a>a7W:YiGc22
 l11
 L10
 V`Q<>1cZ2L3dAm]RPbXW2A3
-R5
+R8
 32
-R43
-R44
-R45
-R6
-R7
+R62
+R63
+R64
+R12
+R13
 !s100 V6>1JL^1HXhgnN@9R5XEj2
 !i10b 1
 Eprogram_counter
-Z46 w1398820936
-R9
+Z65 w1398891510
 R2
 R3
 R4
-Z47 8/home/anti/scratch/cpe318/project/program_counter.vhdl
-Z48 F/home/anti/scratch/cpe318/project/program_counter.vhdl
+R5
+Z66 8/home/anti/scratch/cpe318/project/program_counter.vhdl
+Z67 F/home/anti/scratch/cpe318/project/program_counter.vhdl
 l0
 L6
 VOfcQ7__zeaR8RjMBY=M8R1
-R5
+R8
 32
-Z49 !s108 1398825300.424068
-Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/program_counter.vhdl|
-Z51 !s107 /home/anti/scratch/cpe318/project/program_counter.vhdl|
-R6
-R7
+Z68 !s108 1398891515.423754
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/program_counter.vhdl|
+Z70 !s107 /home/anti/scratch/cpe318/project/program_counter.vhdl|
+R12
+R13
 !s100 1FB_d4Gk<hXR07G>A]e;M0
 !i10b 1
 Abehav
-R9
-R2
-R3
-DEx4 work 15 program_counter 0 22 OfcQ7__zeaR8RjMBY=M8R1
-l15
-L13
-VD9ZR9mRm<?T0m8Z44BDXa3
-R5
-32
-R49
-R50
-R51
-R6
-R7
-!s100 nP4>6dLY:_Ube2jPZfjXM2
-!i10b 1
-Eregfile
-Z52 w1398820870
-R9
 R2
 R3
 R4
-Z53 8/home/anti/scratch/cpe318/project/regfile.vhdl
-Z54 F/home/anti/scratch/cpe318/project/regfile.vhdl
+DEx4 work 15 program_counter 0 22 OfcQ7__zeaR8RjMBY=M8R1
+l15
+L13
+V_iMZdzBJ0NmgHF]=UJ7_`0
+R8
+32
+R68
+R69
+R70
+R12
+R13
+!s100 ACaPnh81aDaOma0oQTfEg2
+!i10b 1
+Eregfile
+Z71 w1398820870
+R2
+R3
+R4
+R5
+Z72 8/home/anti/scratch/cpe318/project/regfile.vhdl
+Z73 F/home/anti/scratch/cpe318/project/regfile.vhdl
 l0
 L5
 V4B=9hbe@?F`?Gd=85769C0
-R5
+R8
 32
-Z55 !s108 1398825300.672706
-Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/regfile.vhdl|
-Z57 !s107 /home/anti/scratch/cpe318/project/regfile.vhdl|
-R6
-R7
+Z74 !s108 1398890841.280290
+Z75 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/regfile.vhdl|
+Z76 !s107 /home/anti/scratch/cpe318/project/regfile.vhdl|
+R12
+R13
 !s100 X?3VZBV^`ci4a31PS^;JO0
 !i10b 1
 Abehav
-R9
 R2
 R3
+R4
 DEx4 work 7 regfile 0 22 4B=9hbe@?F`?Gd=85769C0
 l16
 L12
 VM9kSLV;GzU6AdMQ_MJilA1
-R5
+R8
 32
-R55
-R56
-R57
-R6
-R7
+R74
+R75
+R76
+R12
+R13
 !s100 ?Z1Dnd@eXmG:T?fFJn:ZR3
 !i10b 1
 Esignext
-Z58 w1398709827
-R2
+Z77 w1398709827
 R3
 R4
-Z59 8/home/anti/scratch/cpe318/project/signext.vhdl
-Z60 F/home/anti/scratch/cpe318/project/signext.vhdl
+R5
+Z78 8/home/anti/scratch/cpe318/project/signext.vhdl
+Z79 F/home/anti/scratch/cpe318/project/signext.vhdl
 l0
 L4
 VMOFn]>fICK1_9<zJada9A0
-R5
+R8
 32
-Z61 !s108 1398825300.925131
-Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/signext.vhdl|
-Z63 !s107 /home/anti/scratch/cpe318/project/signext.vhdl|
-R6
-R7
+Z80 !s108 1398890841.365079
+Z81 !s90 -reportprogress|300|-work|work|-2002|-explicit|/home/anti/scratch/cpe318/project/signext.vhdl|
+Z82 !s107 /home/anti/scratch/cpe318/project/signext.vhdl|
+R12
+R13
 !s100 M8ie2fV3SA9a1]6aU]c=53
 !i10b 1
 Abehav
-R2
 R3
+R4
 DEx4 work 7 signext 0 22 MOFn]>fICK1_9<zJada9A0
 l10
 L9
 VCZ;[GDPOF2N7HC;6gRl?>3
-R5
+R8
 32
-R61
-R62
-R63
-R6
-R7
+R80
+R81
+R82
+R12
+R13
 !s100 Ak>^8fHLCO>0CSTfYZNQO1
 !i10b 1
