@@ -4,18 +4,29 @@ use ieee.numeric_std.all;
 use work.lib_mips32.all;
 
 entity mips is
-    port (clk, someothershit : std_logic);
+    port (clk, rst, someothershit : std_logic);
 end entity mips;
 
 architecture structural of mips is
      -- System-wide signals
-    signal g_clk : std_logic;
-    signal g_rst : std_logic;
+    alias g_clk : std_logic is clk;
+    alias g_rst : std_logic is rst;
+    signal g_instruction : std_logic_vector(31 downto 0);
+
+    -- Global instruction defines
+    alias g_opcode : std_logic_vector(5 downto 0)  is g_instruction(31 downto 26);
+    alias g_rs     : std_logic_vector(4 downto 0)  is g_instruction(25 downto 21);
+    alias g_rt     : std_logic_vector(4 downto 0)  is g_instruction(20 downto 16);
+    alias g_rd     : std_logic_vector(4 downto 0)  is g_instruction(15 downto 11);
+    alias g_shamt  : std_logic_vector(4 downto 0)  is g_instruction(10 downto 6);
+    alias g_fn     : std_logic_vector(5 downto 0)  is g_instruction(5 downto 0);
+    alias g_imm    : std_logic_vector(15 downto 0) is g_instruction(15 downto 0);
+    alias g_jump   : std_logic_vector(25 downto 0) is g_instruction(25 downto 0); 
     
     -- ALU Bundles 
-    signal b_alu_a : std_logic_vector(31 downto 0);
-    signal b_alu_b : std_logic_vector(31 downto 0);
-    signal b_alu_out : std_logic_vector(31 downto 0);
+    signal b_alu_a  : std_logic_vector(31 downto 0);
+    signal b_alu_b  : std_logic_vector(31 downto 0);
+    signal b_alu_out: std_logic_vector(31 downto 0);
    
     --ALU Signals 
     signal c_alu_op : std_logic_vector(2 downto 0);
@@ -35,11 +46,14 @@ architecture structural of mips is
     signal c_reg_write : std_logic;
     signal c_mem_en : std_logic;
 
-    signal b_opcode : std_logic_vector(5 downto 0);
+    -- Various intermediary bundles
     signal b_pc_dest : std_logic_vector(31 downto 0);
     signal b_pc_addr : std_logic_vector(31 downto 0);
     signal b_rom_inst : std_logic_vector(31 downto 0);
-        
+    signal b_reg_wb : std_logic_vector(31 downto 0); -- writeback data
+    signal b_rw : std_logic_vector(4 downto 0);
+    signal b_regdat1 : std_logic_vector(31 downto 0);
+    signal b_regdat2 : std_logic_vector(31 downto 0);
 
     -- Components
     component alu
@@ -85,6 +99,19 @@ architecture structural of mips is
         clk : in std_logic);
     end component control;
 
+    component inst_reg
+        port (inst_in : in std_logic_vector(31 downto 0);
+        ir_write, clk : in std_logic;
+        inst_out : out std_logic_vector(31 downto 0));
+    end component inst_reg;
+
+    component regfile
+        port (addr1, addr2, addr3 : in std_logic_vector (4 downto 0);
+        write_data : in std_logic_vector(31 downto 0);
+        out1, out2 : out std_logic_vector (31 downto 0);
+        reg_write, clk, rst : in std_logic);
+    end component regfile;
+
 begin
     -- Component instances
     alu1 : alu
@@ -98,7 +125,7 @@ begin
     control1 : control
     port map (
         clk => g_clk,
-        opcode => b_opcode,
+        opcode => g_opcode,
         pc_write_cond => c_pc_write_cond,
         pc_write => c_pc_write,
         pc_src => c_pc_src,
@@ -128,6 +155,27 @@ begin
        en => c_mem_en,
        read_addr => b_pc_addr,
        d_out => b_rom_inst
+    );
+
+    inst_reg1 : inst_reg
+    port map (
+        clk => g_clk,
+        inst_in => b_rom_inst,
+        inst_out => g_instruction,
+        ir_write => c_ir_write
+    );
+
+    regfile1 : regfile
+    port map (
+        clk => g_clk,
+        rst => g_rst,
+        reg_write => c_reg_write,
+        write_data => b_reg_wb,
+        addr1 => g_rs,
+        addr2 => g_rt,
+        addr3 => b_rw,
+        out1 => b_regdat1,
+        out2 => b_regdat2
     );
 
     mux2_alu_a : mux2

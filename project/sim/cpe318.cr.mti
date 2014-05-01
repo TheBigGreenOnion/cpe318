@@ -59,16 +59,6 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity mux4
 -- Compiling architecture behav of mux4
 
-} {} {}} /home/anti/scratch/cpe318/project/rom.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/rom.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package lib_mips32
--- Compiling entity code_mem
--- Compiling architecture behav of code_mem
-
 } {} {}} /home/anti/scratch/cpe318/project/program_counter.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/program_counter.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
@@ -83,17 +73,7 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 ** Error: /home/anti/scratch/cpe318/project/tb_alu.vhdl(1): (vcom-1491) Empty source files.
 
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/control_unit.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/control_unit.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package lib_mips32
--- Compiling entity control
--- Compiling architecture behav of control
-
-} {} {}} /home/anti/scratch/cpe318/project/ram.vhdl {2 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/ram.vhdl {2 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -104,13 +84,25 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 ** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(21): (vcom-1272) Length of expected is 8; length of actual is 32.
 ** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(23): (vcom-1272) Length of expected is 32; length of actual is 8.
 
-} {} {}} /home/anti/scratch/cpe318/project/signext.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/signext.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/control_unit.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/control_unit.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity signext
--- Compiling architecture behav of signext
+-- Loading package NUMERIC_STD
+-- Loading package lib_mips32
+-- Compiling entity control
+-- Compiling architecture behav of control
+
+} {} {}} /home/anti/scratch/cpe318/project/mips.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mips.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package lib_mips32
+-- Compiling entity mips
+-- Compiling architecture structural of mips
 
 } {} {}} /home/anti/scratch/cpe318/project/alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/alu_control.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -132,12 +124,15 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 ** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(60): near "|": expecting ';'
 ** Error: /home/anti/scratch/cpe318/project/alu_control.vhdl(64): VHDL Compiler exiting
 
-} {10.0 20.0} {}} /home/anti/scratch/cpe318/project/tb_rom.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_rom.vhdl
+} {10.0 20.0} {}} /home/anti/scratch/cpe318/project/signext.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/signext.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_rom.vhdl(1): (vcom-1491) Empty source files.
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity signext
+-- Compiling architecture behav of signext
 
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_regfile.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_regfile.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/tb_regfile.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_regfile.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -145,10 +140,10 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity regfile
 ** Error: /home/anti/scratch/cpe318/project/tb_regfile.vhdl(6): near "out2": expecting ':'
 
-} {7.0 8.0} {}} /home/anti/scratch/cpe318/project/tb_program_counter.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_program_counter.vhdl
+} {7.0 8.0} {}} /home/anti/scratch/cpe318/project/tb_rom.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_rom.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_program_counter.vhdl(1): (vcom-1491) Empty source files.
+** Error: /home/anti/scratch/cpe318/project/tb_rom.vhdl(1): (vcom-1491) Empty source files.
 
 } {4.0 5.0} {}} /home/anti/scratch/cpe318/project/lshift2.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/lshift2.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -158,20 +153,35 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity lshift2
 -- Compiling architecture behav of lshift2
 
-} {} {}} /home/anti/scratch/cpe318/project/tb_signext.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_signext.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/tb_program_counter.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_program_counter.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_signext.vhdl(1): (vcom-1491) Empty source files.
+** Error: /home/anti/scratch/cpe318/project/tb_program_counter.vhdl(1): (vcom-1491) Empty source files.
 
 } {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_alu_control.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 ** Error: /home/anti/scratch/cpe318/project/tb_alu_control.vhdl(1): (vcom-1491) Empty source files.
 
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_signext.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_signext.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+** Error: /home/anti/scratch/cpe318/project/tb_signext.vhdl(1): (vcom-1491) Empty source files.
+
 } {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 ** Error: /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl(1): (vcom-1491) Empty source files.
+
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_lshift2.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_lshift2.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+** Error: /home/anti/scratch/cpe318/project/tb_lshift2.vhdl(2): near "EOF": syntax error
+
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_mux2.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mux2.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+** Error: /home/anti/scratch/cpe318/project/tb_mux2.vhdl(1): (vcom-1491) Empty source files.
 
 } {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_template.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_template.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
@@ -180,14 +190,4 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package std_logic_1164
 ** Error: /home/anti/scratch/cpe318/project/tb_template.vhdl(4): near "is": expecting IDENTIFIER
 
-} {6.0 7.0} {}} /home/anti/scratch/cpe318/project/tb_mux2.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mux2.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_mux2.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_lshift2.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_lshift2.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_lshift2.vhdl(2): near "EOF": syntax error
-
-} {4.0 5.0} {}}
+} {6.0 7.0} {}}
