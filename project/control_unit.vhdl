@@ -11,9 +11,8 @@ entity control is
         alu_src_b, pc_src : out std_logic_vector(1 downto 0);
         alu_op : out std_logic_vector(2 downto 0);
         opcode : in std_logic_vector(5 downto 0);
-        clk : in std_logic);
+        rst, clk : in std_logic);
 end entity control;
-
 
 architecture behav of control is 
     signal s_pc_write_cond, s_pc_write : std_logic;
@@ -24,14 +23,20 @@ architecture behav of control is
     signal s_alu_op : std_logic_vector(2 downto 0);
     
     type state_t is (IF_0, ID_0, EX_0, MEM_0, REGWB_0);
-    type inst_t is (R, I, J, B);
+    type inst_t is (R, I, J, B, MEM);
     type memaccess_t is (load, store, none);
 
-    signal clkstate : state_t := IF_0;
+    signal clkstate : state_t; 
     signal itype : inst_t;
     signal memwb : memaccess_t;
     
 begin
+
+    with opcode select
+        memwb <=
+        load when LUI_OP | LB_OP | LH_OP | LWL_OP | LW_OP | LBU_OP | LHU_OP | LWR_OP,
+        store when SB_OP | SH_OP | SWL_OP | SW_OP | SWR_OP,
+        none when others;
 
     -- Set flags based on instruction
     with opcode select
@@ -46,12 +51,12 @@ begin
     -- preserving the signal values
     -- -- itype dependent signals
     with itype select
-        s_alu_src_a <= '1' when B | R,
+        s_alu_src_a <= '1' when B | R | MEM,
                        '0' when others;
     with  itype select
         s_alu_src_b <= "00" when B | R,
                        "10" when I,
-                       "11" when others;
+                       "11" when others; -- load and store
     with itype select
         s_reg_dest <= '1' when R | B,
                       '0' when others;
@@ -66,21 +71,27 @@ begin
 
     s_pc_src <= "10" when itype = J else
                 "01";
+    s_mem_to_reg <= '1' when memwb = load;
+    
+    with itype select
+        s_reg_write <= '1' when R | I,
+                       '0' when others;
     -- Determine signals using opcode 
     with opcode select
         s_alu_op <= 
-            ALU_OP_ADD  when ADDI_OP | ADDIU_OP,
+            ALU_OP_FN   when R_TYPE_OP,
             ALU_OP_SLT  when SLTI_OP | SLTIU_OP,
             ALU_OP_AND  when ANDI_OP,
             ALU_OP_OR   when ORI_OP,
             ALU_OP_XOR  when XORI_OP,
-            ALU_OP_FN   when others;
+            -- Branch instructions have aluop too
+            ALU_OP_ADD  when others;
 
-
+                
     -- State generation
     state_tbl : process (clk) 
     begin
-        if (falling_edge(clk)) then
+        if (rising_edge(clk) and rst = '0') then
             if (clkstate = IF_0) then
                 clkstate <= ID_0;
             elsif (clkstate = ID_0) then
@@ -112,18 +123,16 @@ begin
                 pc_src <= "00";
                 ir_write <= '1';
 
+                reg_write <= '0';
+
             -- Decode
             elsif (clkstate = ID_0) then
                 -- reset write enables
                 pc_write <= '0';
                 ir_write <= '0';
-
                 -- end write disables
-
-
-                ir_write <= '0';
+                
                 reg_write <= '0';
-
                 reg_dest <= s_reg_dest;
 
             -- Execute
@@ -134,19 +143,20 @@ begin
 
             -- Writeback
             elsif (clkstate = MEM_0) then
+                -- write to PC if branch or jmp instruction
                 pc_src <= s_pc_src;
-                -- 00 reserved for automatic PC increment
+                pc_write_cond <= s_pc_write_cond; 
+                pc_write <= s_pc_write; 
 
-                pc_write_cond <= s_pc_write_cond; -- '1' when itype = B else '0';
+                mem_read <= s_mem_read;
+                mem_write <= s_mem_write; 
                
-                pc_write <= s_pc_write; -- '1' when (itype = B | J) else '0';
-
-                mem_read <= s_mem_read; -- '1' when memwb = load else '0';
-                mem_write <= s_mem_write; --'1' when memwb = store else '0';
+                mem_to_reg <= s_mem_to_reg; -- '1' when memwb = load else '0';
 
             -- RegWrite
             elsif (clkstate = REGWB_0) then
-                mem_to_reg <= s_mem_to_reg; -- '1' when memwb = load else '0';
+                pc_write <= '0';
+                reg_write <= s_reg_write;  
             end if;
         end if;
     end process;

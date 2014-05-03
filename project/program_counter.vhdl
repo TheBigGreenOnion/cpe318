@@ -11,7 +11,7 @@ end entity program_counter;
 
 -- Behavior of program counter
 architecture behav of program_counter is
-    signal ip : std_logic_vector(31 downto 0) := x"FFFFFFFF";
+    signal ip : std_logic_vector(31 downto 0) := x"00000000";
 begin
     pc_addr <= ip;
     pc_inc : process (clk, rst, pc_en)

@@ -3,9 +3,9 @@ use ieee.std_logic_1164.all;
 use work.lib_mips32.all;
 
 entity alu_control is
-    port (alu_op : in std_logic_vector(1 downto 0);
+    port (alu_op : in std_logic_vector(2 downto 0);
         fn : in std_logic_vector(5 downto 0);
-        alu_ctrl : out std_logic_vector(3 downto 0));
+        alu_ctrl : out std_logic_vector(4 downto 0));
 end entity alu_control;
 
 architecture behav of alu_control is

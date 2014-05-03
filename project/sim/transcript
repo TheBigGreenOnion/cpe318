@@ -1,11 +1,12 @@
 # reading /opt/altera/13.1/modelsim_ase/linux/../modelsim.ini
 # Loading project cpe318
+# Compile of regfile.vhdl failed with 1 errors.
+# Compile of regfile.vhdl was successful.
 # Compile of alu.vhdl was successful.
 # Compile of alu_control.vhdl failed with 1 errors.
 # Compile of control_unit.vhdl was successful.
 # Compile of inst_reg.vhdl was successful.
-# Compile of lshift2.vhdl was successful.
-# Compile of mips.vhdl was successful.
+# Compile of mips.vhdl failed with 2 errors.
 # Compile of mux2.vhdl was successful.
 # Compile of mux4.vhdl was successful.
 # Compile of program_counter.vhdl was successful.
@@ -16,7 +17,6 @@
 # Compile of tb_alu.vhdl failed with 1 errors.
 # Compile of tb_alu_control.vhdl failed with 1 errors.
 # Compile of tb_inst_reg.vhdl failed with 1 errors.
-# Compile of tb_lshift2.vhdl failed with 1 errors.
 # Compile of tb_mips.vhdl failed with 1 errors.
 # Compile of tb_mux2.vhdl failed with 1 errors.
 # Compile of tb_mux4.vhdl failed with 1 errors.
@@ -26,259 +26,20 @@
 # Compile of tb_signext.vhdl failed with 1 errors.
 # Compile of tb_template.vhdl failed with 1 errors.
 # Compile of lib_mips32.vhdl was successful.
-# 26 compiles, 13 failed with 13 errors. 
-dataset reload -f
-# wrong number of args for "dataset info".
-# Usage: dataset info <option> <dataset_name>
-# Compile of alu.vhdl was successful.
-# Compile of alu_control.vhdl failed with 1 errors.
-# Compile of control_unit.vhdl was successful.
-# Compile of inst_reg.vhdl was successful.
-# Compile of lshift2.vhdl was successful.
-# Compile of mips.vhdl failed with 1 errors.
-# Compile of mux2.vhdl was successful.
-# Compile of mux4.vhdl was successful.
-# Compile of program_counter.vhdl was successful.
-# Compile of ram.vhdl was successful with warnings.
-# Compile of regfile.vhdl was successful.
-# Compile of rom.vhdl was successful.
-# Compile of signext.vhdl was successful.
-# Compile of tb_alu.vhdl failed with 1 errors.
-# Compile of tb_alu_control.vhdl failed with 1 errors.
-# Compile of tb_inst_reg.vhdl failed with 1 errors.
-# Compile of tb_lshift2.vhdl failed with 1 errors.
-# Compile of tb_mips.vhdl failed with 1 errors.
-# Compile of tb_mux2.vhdl failed with 1 errors.
-# Compile of tb_mux4.vhdl failed with 1 errors.
-# Compile of tb_program_counter.vhdl failed with 1 errors.
-# Compile of tb_regfile.vhdl failed with 1 errors.
-# Compile of tb_rom.vhdl failed with 1 errors.
+# 24 compiles, 13 failed with 14 errors. 
 # Compile of tb_signext.vhdl failed with 1 errors.
-# Compile of tb_template.vhdl failed with 1 errors.
-# Compile of lib_mips32.vhdl was successful.
-# 26 compiles, 14 failed with 14 errors. 
-# Compile of mips.vhdl failed with 1 errors.
-# Compile of mips.vhdl failed with 1 errors.
-# Compile of mips.vhdl failed with 1 errors.
-# Compile of regfile.vhdl was successful.
-# Compile of mips.vhdl failed with 1 errors.
-# Compile of mips.vhdl was successful.
-vsim -voptargs=+acc work.mips
-# vsim -voptargs=+acc work.mips 
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl failed with 1 errors.
+# Compile of tb_signext.vhdl was successful.
+vsim -voptargs=+acc work.tb_signext
+# vsim -voptargs=+acc work.tb_signext 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.lib_mips32
-# Loading work.mips(structural)
-# Loading work.alu(behav)
-# Loading work.control(behav)
-# Loading work.program_counter(behav)
-# Loading work.code_mem(behav)
-# Loading work.inst_reg(behav)
-# Loading work.regfile(behav)
-# Loading work.mux2(behav)
-# Loading work.mux4(behav)
-# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
-# This port will contribute value (U) to the signal network.
-force -freeze sim:/mips/clk 0 0, 1 {50 ps} -r 100
-force -freeze sim:/mips/g_rst 1 0
-run 1 ps
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /mips/regfile1
-force -freeze sim:/mips/g_rst 1 0
-run 48 ps
-force -freeze sim:/mips/g_rst 0 0
+# Loading work.tb_signext(verify)
+# Loading work.signext(behav)
+run 30ns
 quit -sim
-vcom -work work -2002 -explicit -O0 /home/anti/scratch/cpe318/project/mips.vhdl
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package NUMERIC_STD
-# -- Loading package lib_mips32
-# -- Compiling entity mips
-# -- Compiling architecture structural of mips
-# Compile of mips.vhdl was successful.
-vsim -voptargs=+acc work.mips
-# vsim -voptargs=+acc work.mips 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.lib_mips32
-# Loading work.mips(structural)
-# Loading work.alu(behav)
-# Loading work.control(behav)
-# Loading work.program_counter(behav)
-# Loading work.code_mem(behav)
-# Loading work.inst_reg(behav)
-# Loading work.regfile(behav)
-# Loading work.mux2(behav)
-# Loading work.mux4(behav)
-# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
-# This port will contribute value (U) to the signal network.
-add wave -position insertpoint  \
-sim:/mips/clk \
-sim:/mips/g_instruction \
-sim:/mips/b_alu_a \
-sim:/mips/b_alu_b \
-sim:/mips/b_alu_out \
-sim:/mips/b_pc_addr
-add wave -position insertpoint  \
-sim:/mips/g_rst
-force -freeze sim:/mips/g_rst U 0
-force -freeze sim:/mips/g_rst 1 0
-run 1 ps
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /mips/regfile1
-run 49ps
-force -freeze sim:/mips/clk 1 0, 0 {50 ps} -r 100
-run 100ps
-force -freeze sim:/mips/g_rst 0 0
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-run 100ps
-quit -sim
-# Compile of alu.vhdl was successful.
-# Compile of alu_control.vhdl failed with 1 errors.
-# Compile of control_unit.vhdl was successful.
-# Compile of inst_reg.vhdl was successful.
-# Compile of lshift2.vhdl was successful.
-# Compile of mips.vhdl was successful.
-# Compile of mux2.vhdl was successful.
-# Compile of mux4.vhdl was successful.
-# Compile of program_counter.vhdl was successful.
-# Compile of ram.vhdl was successful with warnings.
-# Compile of regfile.vhdl was successful.
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of signext.vhdl was successful.
-# Compile of tb_alu.vhdl failed with 1 errors.
-# Compile of tb_alu_control.vhdl failed with 1 errors.
-# Compile of tb_inst_reg.vhdl failed with 1 errors.
-# Compile of tb_lshift2.vhdl failed with 1 errors.
-# Compile of tb_mips.vhdl failed with 1 errors.
-# Compile of tb_mux2.vhdl failed with 1 errors.
-# Compile of tb_mux4.vhdl failed with 1 errors.
-# Compile of tb_program_counter.vhdl failed with 1 errors.
-# Compile of tb_regfile.vhdl failed with 1 errors.
-# Compile of tb_rom.vhdl failed with 1 errors.
-# Compile of tb_signext.vhdl failed with 1 errors.
-# Compile of tb_template.vhdl failed with 1 errors.
-# Compile of lib_mips32.vhdl was successful.
-# 26 compiles, 14 failed with 14 errors. 
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of rom.vhdl failed with 2 errors.
-# Compile of rom.vhdl failed with 2 errors.
-# Compile of rom.vhdl failed with 2 errors.
-# Compile of rom.vhdl was successful with warnings.
-# Compile of rom.vhdl was successful.
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of rom.vhdl failed with 1 errors.
-# Compile of rom.vhdl was successful.
-# Compile of rom.vhdl was successful.
-# Compile of rom.vhdl was successful.
-# Compile of mips.vhdl was successful.
-vsim -voptargs=+acc work.mips
-# vsim -voptargs=+acc work.mips 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.lib_mips32
-# Loading work.mips(structural)
-# Loading work.alu(behav)
-# Loading work.control(behav)
-# Loading work.program_counter(behav)
-# Loading work.code_mem(behav)
-# Loading work.inst_reg(behav)
-# Loading work.regfile(behav)
-# Loading work.mux2(behav)
-# Loading work.mux4(behav)
-# ** Warning: (vsim-8683) Uninitialized out port /mips/alu1/zf has no driver.
-# This port will contribute value (U) to the signal network.
-force -freeze sim:/mips/clk 0 0, 1 {50 ps} -r 100
-force -freeze sim:/mips/rst 1 0
-run 1 ps
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 0  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /mips/regfile1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ps  Iteration: 1  Instance: /mips/regfile1
-force -freeze sim:/mips/rst 0 0
-add wave -position insertpoint  \
-sim:/mips/clk \
-sim:/mips/rst \
-sim:/mips/g_instruction \
-sim:/mips/b_alu_a \
-sim:/mips/b_alu_b \
-sim:/mips/b_alu_out \
-sim:/mips/b_pc_addr
-run 49ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps
-run 50ps

@@ -19,17 +19,13 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 } {} {}} /home/anti/scratch/cpe318/project/tb_mux4.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mux4.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_mux4.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/lib_mips32.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/lib_mips32.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling package lib_mips32
+** Error: /home/anti/scratch/cpe318/project/tb_mux4.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_mux4.vhdl(6): VHDL Compiler exiting
 
-} {} {}} /home/anti/scratch/cpe318/project/mux2.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mux2.vhdl
+} {7.0 9.0} {}} /home/anti/scratch/cpe318/project/mux2.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mux2.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -46,12 +42,7 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity regfile
 -- Compiling architecture behav of regfile
 
-} {} {}} /home/anti/scratch/cpe318/project/tb_mips.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mips.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_mips.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/mux4.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mux4.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/mux4.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mux4.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -59,7 +50,22 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Compiling entity mux4
 -- Compiling architecture behav of mux4
 
-} {} {}} /home/anti/scratch/cpe318/project/program_counter.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/program_counter.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/rom.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/rom.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package lib_mips32
+-- Compiling entity code_mem
+-- Compiling architecture behav of code_mem
+
+} {} {}} /home/anti/scratch/cpe318/project/tb_mips.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mips.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+** Error: /home/anti/scratch/cpe318/project/tb_mips.vhdl(1): (vcom-1491) Empty source files.
+
+} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/program_counter.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/program_counter.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -71,9 +77,13 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 } {} {}} /home/anti/scratch/cpe318/project/tb_alu.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_alu.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_alu.vhdl(1): (vcom-1491) Empty source files.
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+** Error: /home/anti/scratch/cpe318/project/tb_alu.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_alu.vhdl(6): VHDL Compiler exiting
 
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/ram.vhdl {2 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
+} {7.0 9.0} {}} /home/anti/scratch/cpe318/project/ram.vhdl {2 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/ram.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -84,17 +94,7 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 ** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(21): (vcom-1272) Length of expected is 8; length of actual is 32.
 ** Warning: [14] /home/anti/scratch/cpe318/project/ram.vhdl(23): (vcom-1272) Length of expected is 32; length of actual is 8.
 
-} {} {}} /home/anti/scratch/cpe318/project/control_unit.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/control_unit.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package lib_mips32
--- Compiling entity control
--- Compiling architecture behav of control
-
-} {} {}} /home/anti/scratch/cpe318/project/mips.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mips.vhdl
+} {} {}} /home/anti/scratch/cpe318/project/mips.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/mips.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -103,8 +103,21 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package lib_mips32
 -- Compiling entity mips
 -- Compiling architecture structural of mips
+-- Loading entity alu
+-- Loading entity alu_control
+-- Loading entity control
+-- Loading entity program_counter
+** Error: (vcom-13) Recompile work.code_mem because work.lib_mips32 has changed.
+** Error: /home/anti/scratch/cpe318/project/mips.vhdl(117): (vcom-1195) Cannot find expanded name "work.code_mem".
+** Error: /home/anti/scratch/cpe318/project/mips.vhdl(117): Unknown expanded name.
+-- Loading entity inst_reg
+-- Loading entity mux2
+-- Loading entity regfile
+-- Loading entity signext
+-- Loading entity mux4
+** Error: /home/anti/scratch/cpe318/project/mips.vhdl(205): VHDL Compiler exiting
 
-} {} {}} /home/anti/scratch/cpe318/project/alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/alu_control.vhdl
+} {14.0 17.0 22.0 23.0} {}} /home/anti/scratch/cpe318/project/alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/alu_control.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -143,51 +156,55 @@ Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 } {7.0 8.0} {}} /home/anti/scratch/cpe318/project/tb_rom.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_rom.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_rom.vhdl(1): (vcom-1491) Empty source files.
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+** Error: /home/anti/scratch/cpe318/project/tb_rom.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_rom.vhdl(6): VHDL Compiler exiting
 
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/lshift2.vhdl {1 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/lshift2.vhdl
+} {7.0 9.0} {}} /home/anti/scratch/cpe318/project/tb_program_counter.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_program_counter.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity lshift2
--- Compiling architecture behav of lshift2
+-- Loading package NUMERIC_STD
+** Error: /home/anti/scratch/cpe318/project/tb_program_counter.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_program_counter.vhdl(6): VHDL Compiler exiting
 
-} {} {}} /home/anti/scratch/cpe318/project/tb_program_counter.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_program_counter.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_program_counter.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_alu_control.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_alu_control.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_signext.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_signext.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_signext.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_lshift2.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_lshift2.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_lshift2.vhdl(2): near "EOF": syntax error
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_mux2.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mux2.vhdl
-Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
--- Loading package STANDARD
-** Error: /home/anti/scratch/cpe318/project/tb_mux2.vhdl(1): (vcom-1491) Empty source files.
-
-} {4.0 5.0} {}} /home/anti/scratch/cpe318/project/tb_template.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_template.vhdl
+} {7.0 9.0} {}} /home/anti/scratch/cpe318/project/tb_alu_control.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_alu_control.vhdl
 Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
-** Error: /home/anti/scratch/cpe318/project/tb_template.vhdl(4): near "is": expecting IDENTIFIER
+-- Loading package NUMERIC_STD
+** Error: /home/anti/scratch/cpe318/project/tb_alu_control.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_alu_control.vhdl(6): VHDL Compiler exiting
 
-} {6.0 7.0} {}}
+} {7.0 9.0} {}} /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+** Error: /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_inst_reg.vhdl(6): VHDL Compiler exiting
+
+} {7.0 9.0} {}} /home/anti/scratch/cpe318/project/tb_mux2.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_mux2.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+** Error: /home/anti/scratch/cpe318/project/tb_mux2.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_mux2.vhdl(6): VHDL Compiler exiting
+
+} {7.0 9.0} {}} /home/anti/scratch/cpe318/project/tb_template.vhdl {0 {vcom -work work -2002 -explicit /home/anti/scratch/cpe318/project/tb_template.vhdl
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+** Error: /home/anti/scratch/cpe318/project/tb_template.vhdl(4): (vcom-1136) Unknown identifier "lib_mips32".
+** Error: /home/anti/scratch/cpe318/project/tb_template.vhdl(6): VHDL Compiler exiting
+
+} {7.0 9.0} {}}

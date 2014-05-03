@@ -5,7 +5,7 @@ use work.lib_mips32.all;
 
 entity alu is
     port (a,b : in std_logic_vector(31 downto 0);
---        op : in std_logic_vector(XXX downto 0);
+        ctrl, shamt : in std_logic_vector(4 downto 0);
         result : out std_logic_vector(31 downto 0);
         zf : out std_logic);
 end entity alu;
