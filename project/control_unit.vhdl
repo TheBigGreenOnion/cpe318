@@ -41,7 +41,8 @@ begin
     -- Set flags based on instruction
     with opcode select
         itype <= 
-            J when JAL_OP | J_OP,
+            J when JAL_OP,
+            J when J_OP,
             B when REGIMM_OP,
             R when R_TYPE_OP,
             I when others;
