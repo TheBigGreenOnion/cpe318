@@ -7,7 +7,7 @@ use ieee.numeric_std.all;
 use work.lib_mips32.all;
 
 entity mips is
-    port (clk, rst, someothershit : std_logic);
+    port (clk, rst : std_logic);
 end entity mips;
 
 architecture structural of mips is
@@ -30,6 +30,7 @@ architecture structural of mips is
     signal b_alu_a  : std_logic_vector(31 downto 0);
     signal b_alu_b  : std_logic_vector(31 downto 0);
     signal b_alu_out: std_logic_vector(31 downto 0);
+    signal b_alu_unbuff : std_logic_vector(31 downto 0);
    
     --ALU Signals 
     signal c_alu_op : std_logic_vector(2 downto 0);
@@ -73,9 +74,11 @@ begin
         port map (
             a => b_alu_a,
             b => b_alu_b,
+            clk => g_clk,
             ctrl => c_alu_ctrl,
             shamt => g_shamt,
             result => b_alu_out,
+            res_unbuff => b_alu_unbuff,
             zf => c_alu_zero
         );
 
@@ -194,7 +197,7 @@ begin
     mux4_pc_src : entity work.mux4
         generic map (n => 32)
         port map (
-            a => b_alu_out,
+            a => b_alu_unbuff,
             b => b_alu_out,        -- buffered alu out
             c => b_pc_jmp,      -- branch logic
             d => Zero32,

@@ -34,8 +34,8 @@ begin
 
     with opcode select
         memwb <=
-        load when LUI_OP | LB_OP | LH_OP | LWL_OP | LW_OP | LBU_OP | LHU_OP | LWR_OP,
-        store when SB_OP | SH_OP | SWL_OP | SW_OP | SWR_OP,
+        load when LW_OP,    --LUI_OP | LB_OP | LH_OP | LWL_OP | LW_OP | LBU_OP | LHU_OP | LWR_OP,
+        store when SW_OP,   --SB_OP | SH_OP | SWL_OP | SW_OP | SWR_OP,
         none when others;
 
     -- Set flags based on instruction
@@ -51,19 +51,24 @@ begin
     -- preserving the signal values
     -- -- itype dependent signals
     with itype select
-        s_alu_src_a <= '1' when B | R | MEM,
+        s_alu_src_a <= '1' when B,
+                       '1' when R, 
+                       '1' when MEM,
                        '0' when others;
     with  itype select
-        s_alu_src_b <= "00" when B | R,
+        s_alu_src_b <= "00" when B,
+                       "00" when R,
                        "10" when I,
                        "11" when others; -- load and store
     with itype select
-        s_reg_dest <= '1' when R | B,
+        s_reg_dest <= '1' when R,
+                      '1' when B,
                       '0' when others;
     
     s_pc_write_cond <= '1'; --XXX PLACEHOLDER
     with itype select
-        s_pc_write <= '1' when B | J,
+        s_pc_write <= '1' when B,
+                      '1' when J,
                       '0' when others;
 
     s_mem_read <= '1'  when memwb = load else '0';
@@ -74,13 +79,15 @@ begin
     s_mem_to_reg <= '1' when memwb = load;
     
     with itype select
-        s_reg_write <= '1' when R | I,
+        s_reg_write <= '1' when R,
+                       '1' when I,
                        '0' when others;
     -- Determine signals using opcode 
     with opcode select
         s_alu_op <= 
             ALU_OP_FN   when R_TYPE_OP,
-            ALU_OP_SLT  when SLTI_OP | SLTIU_OP,
+            ALU_OP_SLT  when SLTI_OP,
+            ALU_OP_SLT  when SLTIU_OP,
             ALU_OP_AND  when ANDI_OP,
             ALU_OP_OR   when ORI_OP,
             ALU_OP_XOR  when XORI_OP,
@@ -117,9 +124,9 @@ begin
             if (clkstate = IF_0) then
                 alu_src_a <= '0';     -- Source PC
                 alu_src_b <= "01";    -- Source '4'
-                alu_op <= ALU_OP_ADD;
+                alu_op <= ALU_OP_ADDU;
                 
-                pc_write <= '1';
+                --pc_write <= '1';
                 pc_src <= "00";
                 ir_write <= '1';
 
@@ -127,8 +134,8 @@ begin
 
             -- Decode
             elsif (clkstate = ID_0) then
+                pc_write <= '1';
                 -- reset write enables
-                pc_write <= '0';
                 ir_write <= '0';
                 -- end write disables
                 
@@ -137,6 +144,7 @@ begin
 
             -- Execute
             elsif (clkstate = EX_0) then
+                pc_write <= '0';
                 alu_src_a <= s_alu_src_a; 
                 alu_src_b <= s_alu_src_b;
                 alu_op <= s_alu_op;         

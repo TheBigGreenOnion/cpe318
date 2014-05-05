@@ -3,14 +3,14 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use lib_mips32.all;
 
-entity FUCK is
+entity ENT is
     port ( ); 
-end entity FUCK;
+end entity ENT;
 
-architecture verify of FUCK is
+architecture verify of ENT is
     signal 
 begin
-    duv : entity work.SHIT
+    duv : entity work.ARCH
         port map ( 
             clk => clk,
             PERTS

@@ -12,11 +12,17 @@ end entity code_mem;
 
 
 architecture behav of code_mem is
-    type code_t is array (0 to 31) of std_logic_vector(7 downto 0);
+    type code_t is array (0 to 31) of std_logic_vector(31 downto 0);
     constant imem : code_t := 
-        (x"00", x"00", x"00", x"00", 
-         x"FF", x"FF", x"FF", x"FF", 
-         others => x"FF");
+        (
+        x"00000000", 
+        x"20210001",
+        x"08000000",
+--      x"", 
+--      x"", 
+--      x"", 
+--      x"", 
+         others => x"00000000");
 
     signal inst : std_logic_vector(31 downto 0); 
 begin
@@ -25,10 +31,7 @@ begin
     process (clk)
     begin
         if rising_edge(clk) then
-            inst <= imem(to_integer(unsigned(read_addr))) 
-                & imem(to_integer(unsigned(read_addr))+1) 
-                & imem(to_integer(unsigned(read_addr))+2) 
-                & imem(to_integer(unsigned(read_addr))+3);
+            inst <= imem(to_integer(unsigned(read_addr(31 downto 2))));
         end if;
     end process;
 end architecture behav;

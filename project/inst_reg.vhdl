@@ -8,7 +8,7 @@ entity inst_reg is
 end entity inst_reg;
 
 architecture behav of inst_reg is
-    signal inst : std_logic_vector(31 downto 0);
+    signal inst : std_logic_vector(31 downto 0) := (others => '0');
 begin
     inst_out <= inst;
 

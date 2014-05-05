@@ -37,10 +37,10 @@ package lib_mips32 is
     -- OPCode based instruction definitions
     constant R_TYPE_OP  :   std_logic_vector(5 downto 0)    := "000000";
     constant REGIMM_OP  :   std_logic_vector(5 downto 0)    := "000001";
-    --  constant BGEZ_OP    :   std_logic_vector(5 downto 0)    := "0x04	0100	00";
-    --  constant BGEZAL_OP	:   std_logic_vector(5 downto 0)    := "0x04	1100	00";
-    --  constant BLTZ_OP	:   std_logic_vector(5 downto 0)    := "0X04	0000	00";	
-    --  constant BLTZAL_OP	:   std_logic_vector(5 downto 0)    := "0x04	1000	00";	
+--  constant BGEZ_OP    :   std_logic_vector(5 downto 0)    := "0x04	0100	00";
+--  constant BGEZAL_OP	:   std_logic_vector(5 downto 0)    := "0x04	1100	00";
+--  constant BLTZ_OP	:   std_logic_vector(5 downto 0)    := "0X04	0000	00";	
+--  constant BLTZAL_OP	:   std_logic_vector(5 downto 0)    := "0x04	1000	00";	
     constant J_OP   	:   std_logic_vector(5 downto 0)    := "000010";	
     constant JAL_OP 	:   std_logic_vector(5 downto 0)    := "000011";	
     constant BEQ_OP	    :   std_logic_vector(5 downto 0)    := "000100";	
@@ -54,7 +54,7 @@ package lib_mips32 is
     constant ANDI_OP	:   std_logic_vector(5 downto 0)    := "001100";	
     constant ORI_OP	    :   std_logic_vector(5 downto 0)    := "001101";	
     constant XORI_OP	:   std_logic_vector(5 downto 0)    := "001110";	
-    constant LUI_OP	    :   std_logic_vector(5 downto 0)    := "001111";	
+--  constant LUI_OP	    :   std_logic_vector(5 downto 0)    := "001111";	
 --  constant LB_OP	    :   std_logic_vector(5 downto 0)    := "100000";	
 --  constant LH_OP	    :   std_logic_vector(5 downto 0)    := "100001";	
 --  constant LWL_OP	    :   std_logic_vector(5 downto 0)    := "100010";	
@@ -76,7 +76,7 @@ package lib_mips32 is
     constant ALU_OP_XOR :   std_logic_vector(2 downto 0)    := "100";
     constant ALU_OP_OR  :   std_logic_vector(2 downto 0)    := "101";
     constant ALU_OP_SUB :   std_logic_vector(2 downto 0)    := "110";
-    constant ALU_OP_WAT :   std_logic_vector(2 downto 0)    := "111";
+    constant ALU_OP_ADDU :   std_logic_vector(2 downto 0)    := "111";
 
     -- Define alu control signals
 	constant ALU_CTRL_ADD  	: std_logic_vector(4 downto 0) := "00001";

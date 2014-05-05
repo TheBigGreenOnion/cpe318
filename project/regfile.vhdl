@@ -10,8 +10,8 @@ entity regfile is
 end entity regfile;
 
 architecture behav of regfile is
-type regarray is array (31 downto 0) of std_logic_vector(31 downto 0);
-signal registers : regarray := (others => (others => '0'));
+type register_t is array (0 to 31) of std_logic_vector(31 downto 0);
+signal registers : register_t := (others => (others => '0'));
 
 begin
     out1 <= registers(to_integer(unsigned(addr1)));
