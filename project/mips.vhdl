@@ -39,7 +39,6 @@ architecture structural of mips is
     signal c_alu_zero : std_logic;
     signal c_alu_ctrl : std_logic_vector(4 downto 0);
 
-    signal b_alu_b0 : std_logic_vector(31 downto 0);
     signal b_alu_b1 : std_logic_vector(31 downto 0) := x"00000004";
     signal b_alu_b2 : std_logic_vector(31 downto 0);
     signal b_alu_b3 : std_logic_vector(31 downto 0);
@@ -204,5 +203,16 @@ begin
             sel => c_pc_src,    -- default 0
             output => b_pc_dest
         );
+
+    ram1 : entity work.data_mem
+        port map( 
+           ram_addr => b_alu_out,
+           d_in => b_regdat2,
+           d_out => b_ram_data,
+           write_en => c_mem_write,
+           read_en => c_mem_read,
+           clk => g_clk,
+           rst => g_rst
+       );
 
 end architecture;

@@ -18,7 +18,7 @@ architecture behav of code_mem is
         x"00000000", 
         x"20210001",
         --x"AC410000",
-        x"08000100",
+        x"08000000",
 --      x"", 
 --      x"", 
 --      x"", 
