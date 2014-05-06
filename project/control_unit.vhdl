@@ -158,10 +158,10 @@ begin
                 mem_read <= s_mem_read;
                 mem_write <= s_mem_write; 
                 mem_to_reg <= s_mem_to_reg; -- '1' when memwb = load else '0';
-                reg_write <= s_reg_write;  
             -- RegWrite
             elsif (clkstate = REGWB_0) then
                 ir_write <= '1';
+                reg_write <= s_reg_write;  
                 --mem_to_reg <= s_mem_to_reg;
             end if;
         end if;

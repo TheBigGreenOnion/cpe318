@@ -79,7 +79,7 @@ begin
             shamt => g_shamt,
             result => b_alu_out,
             res_unbuff => b_alu_unbuff,
-            zf => c_alu_zero
+            branch_condition => c_alu_zero
         );
 
     alu_control1 : entity work.alu_control
