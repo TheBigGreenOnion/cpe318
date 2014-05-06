@@ -26,7 +26,7 @@ architecture behav of control is
     type inst_t is (R, I, J, B, MEM);
     type memaccess_t is (load, store, none);
 
-    signal clkstate : state_t := REGWB_0; 
+    signal clkstate : state_t; 
     signal itype : inst_t;
     signal memwb : memaccess_t;
     
@@ -52,17 +52,17 @@ begin
     -- preserving the signal values
     -- -- itype dependent signals
     with itype select
-        s_alu_src_a <= '0' when J,
-                       '1' when others;
+        s_alu_src_a <= '1' when B,
+                       '1' when R, 
+                       '1' when MEM,
+                       '0' when others;
     with  itype select
         s_alu_src_b <= "00" when R,
                        "10" when I,
                        "11" when others; -- load and store
     with itype select
-        s_reg_dest <= '0' when I,
+        s_reg_dest <= '1' when R,
                       '1' when B,
-                      '0' when J,
-                      '1' when R,
                       '0' when others;
     
     s_pc_write_cond <= '1'; --XXX PLACEHOLDER
@@ -96,25 +96,21 @@ begin
 
                 
     -- State generation
-    state_tbl : process (clk, rst) 
+    state_tbl : process (clk) 
     begin
-        if (falling_edge(clk)) then
-            if (rst = '0') then
-                if (clkstate = IF_0) then
-                    clkstate <= ID_0;
-                elsif (clkstate = ID_0) then
-                    clkstate <= EX_0;
-                elsif (clkstate = EX_0) then
-                    clkstate <= MEM_0;
-                elsif (clkstate = MEM_0) then
-                    clkstate <= REGWB_0;
-                elsif (clkstate = REGWB_0) then
-                    clkstate <= IF_0;
-                else
-                    clkstate <= REGWB_0;
-                end if;
-            else
+        if (rising_edge(clk) and rst = '0') then
+            if (clkstate = IF_0) then
+                clkstate <= ID_0;
+            elsif (clkstate = ID_0) then
+                clkstate <= EX_0;
+            elsif (clkstate = EX_0) then
+                clkstate <= MEM_0;
+            elsif (clkstate = MEM_0) then
                 clkstate <= REGWB_0;
+            elsif (clkstate = REGWB_0) then
+                clkstate <= IF_0;
+            else
+                clkstate <= IF_0;
             end if;
         end if;
     end process state_tbl;
@@ -132,13 +128,14 @@ begin
                 
                 pc_write <= '1';
                 pc_src <= "00";
-                ir_write <= '0';
+                ir_write <= '1';
                 reg_write <= '0';
 
             -- Decode
             elsif (clkstate = ID_0) then
-                ir_write <= '0';
                 pc_write <= '0';
+                ir_write <= '0';
+
                 reg_dest <= s_reg_dest;
 
             -- Execute
@@ -157,14 +154,17 @@ begin
 
                 mem_read <= s_mem_read;
                 mem_write <= s_mem_write; 
+               
                 mem_to_reg <= s_mem_to_reg; -- '1' when memwb = load else '0';
-                reg_write <= s_reg_write;  
+
             -- RegWrite
             elsif (clkstate = REGWB_0) then
-                ir_write <= '1';
-                --mem_to_reg <= s_mem_to_reg;
+                pc_write <= '0';
+                reg_write <= s_reg_write;  
+                mem_to_reg <= s_mem_to_reg;
             end if;
         end if;
     end process;
 
 end architecture behav;
+

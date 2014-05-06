@@ -11,14 +11,14 @@ entity alu is
         ctrl, shamt : in std_logic_vector(4 downto 0);
         clk : in std_logic;
         result, res_unbuff : out std_logic_vector(31 downto 0);
-        zf : out std_logic);
+        branch_condition : out std_logic);
 end entity alu;
 
 architecture behav of alu is
     -- signed and unsigned signals 
     signal result_s, slt_val : signed (31 downto 0);
     signal result_u, sltu_val : unsigned (31 downto 0);
-
+    signal branch_condition : std_logic;
     signal a_s, b_s : signed(31 downto 0);
     signal a_u, b_u : unsigned(31 downto 0);
 
@@ -65,6 +65,9 @@ begin
 --        result_s <= a_s   b_s when ALU_CTRL_,
 
     -- Add branch logic as well
+    --with ctrl select
+    --    branch_cond <=
+            
 
     latch : process (clk, signedp)
     begin
