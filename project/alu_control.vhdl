@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use work.lib_mips32.all;
 
 entity alu_control is
-    port (alu_op : in std_logic_vector(2 downto 0);
+    port (alu_op : in std_logic_vector(3 downto 0);
         fn : in std_logic_vector(5 downto 0);
         alu_ctrl : out std_logic_vector(4 downto 0));
 end entity alu_control;
@@ -24,6 +24,10 @@ begin
             ALU_CTRL_SUB  when ALU_OP_SUB,  -- sub
             ALU_CTRL_SLT  when ALU_OP_SLT,
             ALU_CTRL_ADDU when ALU_OP_ADDU,
+            ALU_CTRL_BEQ  when ALU_OP_BEQ, 
+            ALU_CTRL_BNE  when ALU_OP_BNE,
+            ALU_CTRL_BLEZ when ALU_OP_BLEZ,
+            ALU_CTRL_BGTZ when ALU_OP_BGTZ,
             ALU_CTRL_ADD  when others;
 
     -- R type
@@ -59,7 +63,8 @@ begin
             ALU_CTRL_SRL  when  SRL_FN,
             ALU_CTRL_SRL  when  SRLV_FN,
             ALU_CTRL_XOR  when  XOR_FN,
-            ALU_CTRL_ADD  when others;
+            ALU_CTRL_ADDU when others;
+            
         
     with fn select
     shift_sel <= 

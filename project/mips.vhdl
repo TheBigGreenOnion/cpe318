@@ -34,10 +34,10 @@ architecture structural of mips is
     signal b_alu_unbuff : std_logic_vector(31 downto 0);
    
     --ALU Signals 
-    signal c_alu_op : std_logic_vector(2 downto 0);
+    signal c_alu_op : std_logic_vector(3 downto 0);
     signal c_alu_src_a : std_logic;
     signal c_alu_src_b : std_logic_vector(1 downto 0);
-    signal c_alu_zero : std_logic;
+    signal c_alu_branch : std_logic;
     signal c_alu_ctrl : std_logic_vector(4 downto 0);
 
     signal b_alu_b1 : std_logic_vector(31 downto 0) ;
@@ -47,8 +47,8 @@ architecture structural of mips is
     signal b_pc_jmp : std_logic_vector(31 downto 0);
 
     -- General control signals  
-    signal c_pc_write_cond : std_logic;
     signal c_pc_write : std_logic;
+    signal c_pc_en : std_logic;
     signal c_pc_src : std_logic_vector(1 downto 0);
     signal c_mem_to_reg : std_logic;
     signal c_mem_write : std_logic;
@@ -80,7 +80,7 @@ begin
             shamt => g_shamt,
             result => b_alu_out,
             res_unbuff => b_alu_unbuff,
-            branch_condition => c_alu_zero
+            branch_condition => c_alu_branch
         );
 
     alu_control1 : entity work.alu_control
@@ -95,7 +95,6 @@ begin
             clk => g_clk,
             rst => g_rst,
             opcode => g_opcode,
-            pc_write_cond => c_pc_write_cond,
             pc_write => c_pc_write,
             pc_src => c_pc_src,
             mem_to_reg => c_mem_to_reg,
@@ -109,11 +108,12 @@ begin
             reg_write => c_reg_write
         );
 
+    c_pc_en <= c_pc_write or c_alu_branch;
     program_counter1 : entity work.program_counter
         port map (
             clk => g_clk,
             rst => g_rst,
-            pc_en => c_pc_write,
+            pc_en => c_pc_en,
             pc_dest => b_pc_dest,
             pc_addr => b_pc_addr 
         );

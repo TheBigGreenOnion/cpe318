@@ -69,14 +69,19 @@ package lib_mips32 is
 --  constant SWR_OP     :   std_logic_vector(5 downto 0)    := "101110";	
 
     -- Define control unit - alu communications
-    constant ALU_OP_ADD :   std_logic_vector(2 downto 0)    := "000";
-    constant ALU_OP_FN  :   std_logic_vector(2 downto 0)    := "001";
-    constant ALU_OP_SLT :   std_logic_vector(2 downto 0)    := "010";
-    constant ALU_OP_AND :   std_logic_vector(2 downto 0)    := "011";
-    constant ALU_OP_XOR :   std_logic_vector(2 downto 0)    := "100";
-    constant ALU_OP_OR  :   std_logic_vector(2 downto 0)    := "101";
-    constant ALU_OP_SUB :   std_logic_vector(2 downto 0)    := "110";
-    constant ALU_OP_ADDU :   std_logic_vector(2 downto 0)    := "111";
+    constant ALU_OP_ADD :   std_logic_vector(3 downto 0)    := "0000";
+    constant ALU_OP_FN  :   std_logic_vector(3 downto 0)    := "0001";
+    constant ALU_OP_SLT :   std_logic_vector(3 downto 0)    := "0010";
+    constant ALU_OP_AND :   std_logic_vector(3 downto 0)    := "0011";
+    constant ALU_OP_XOR :   std_logic_vector(3 downto 0)    := "0100";
+    constant ALU_OP_OR  :   std_logic_vector(3 downto 0)    := "0101";
+    constant ALU_OP_SUB :   std_logic_vector(3 downto 0)    := "0110";
+    constant ALU_OP_ADDU :   std_logic_vector(3 downto 0)   := "0111";
+
+    constant ALU_OP_BEQ  :   std_logic_vector(3 downto 0)    := "1000";
+    constant ALU_OP_BNE  :   std_logic_vector(3 downto 0)    := "1001";
+    constant ALU_OP_BLEZ :   std_logic_vector(3 downto 0)    := "1010";
+    constant ALU_OP_BGTZ :   std_logic_vector(3 downto 0)    := "1011";
 
     -- Define alu control signals
 	constant ALU_CTRL_ADD  	: std_logic_vector(4 downto 0) := "00001";
@@ -104,7 +109,11 @@ package lib_mips32 is
 	constant ALU_CTRL_SRA  	: std_logic_vector(4 downto 0) := "11001";
 	constant ALU_CTRL_SRL  	: std_logic_vector(4 downto 0) := "11010";
 	constant ALU_CTRL_XOR  	: std_logic_vector(4 downto 0) := "11100";
-
+    
+	constant ALU_CTRL_BEQ  	: std_logic_vector(4 downto 0) := "11101";
+	constant ALU_CTRL_BNE  	: std_logic_vector(4 downto 0) := "11110";
+	constant ALU_CTRL_BLEZ 	: std_logic_vector(4 downto 0) := "11111";
+	constant ALU_CTRL_BGTZ 	: std_logic_vector(4 downto 0) := "00000";
 
     -- General Declarations
     constant Zero32     :   std_logic_vector(31 downto 0)   := (others => '0');

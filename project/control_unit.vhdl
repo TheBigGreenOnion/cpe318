@@ -4,23 +4,23 @@ use ieee.numeric_std.all;
 use work.lib_mips32.all;
 
 entity control is
-    port ( pc_write_cond, pc_write : out std_logic;
+    port ( pc_write : out std_logic;
         mem_to_reg, mem_write, mem_read : out std_logic;
         ir_write, reg_dest, reg_write : out std_logic;
         alu_src_a : out std_logic;
         alu_src_b, pc_src : out std_logic_vector(1 downto 0);
-        alu_op : out std_logic_vector(2 downto 0);
+        alu_op : out std_logic_vector(3 downto 0);
         opcode : in std_logic_vector(5 downto 0);
         rst, clk : in std_logic);
 end entity control;
 
 architecture behav of control is 
-    signal s_pc_write_cond, s_pc_write : std_logic;
+    signal s_pc_write : std_logic;
     signal s_mem_addr, s_mem_to_reg, s_mem_write, s_mem_read : std_logic;
     signal s_reg_writeinst, s_reg_dest, s_reg_write : std_logic;
     signal s_alu_src_a : std_logic;
     signal s_alu_src_b, s_pc_src : std_logic_vector(1 downto 0);
-    signal s_alu_op : std_logic_vector(2 downto 0);
+    signal s_alu_op : std_logic_vector(3 downto 0);
     
     type state_t is (IF_0, ID_0, EX_0, MEM_0, REGWB_0);
     type inst_t is (R, I, J, B, MEM);
@@ -65,7 +65,6 @@ begin
                       '1' when R,
                       '0' when others;
     
-    s_pc_write_cond <= '1'; --XXX PLACEHOLDER
     with itype select
         s_pc_write <= '1' when B,
                       '1' when J,
@@ -91,6 +90,11 @@ begin
             ALU_OP_AND  when ANDI_OP,
             ALU_OP_OR   when ORI_OP,
             ALU_OP_XOR  when XORI_OP,
+
+            ALU_OP_BEQ  when BEQ_OP,  
+            ALU_OP_BNE  when BNE_OP,
+            ALU_OP_BLEZ when BLEZ_OP,
+            ALU_OP_BGTZ when BGTZ_OP,
             -- Branch instructions have aluop too
             ALU_OP_ADD  when others;
 
@@ -152,7 +156,6 @@ begin
             elsif (clkstate = MEM_0) then
                 -- write to PC if branch or jmp instruction
                 pc_src <= s_pc_src;
-                pc_write_cond <= s_pc_write_cond; 
                 pc_write <= s_pc_write; 
 
                 mem_read <= s_mem_read;

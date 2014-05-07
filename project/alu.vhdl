@@ -18,16 +18,18 @@ architecture behav of alu is
     -- signed and unsigned signals 
     signal result_s, slt_val : signed (31 downto 0);
     signal result_u, sltu_val : unsigned (31 downto 0);
-    --signal branch_condition : std_logic;
+    signal s_branch_cond : std_logic;
     signal a_s, b_s : signed(31 downto 0);
     signal a_u, b_u : unsigned(31 downto 0);
 
+    signal s_eq, s_ltz, s_gez : std_logic;
     signal signedp : std_logic;
 begin
     a_s <= signed (a);
     b_s <= signed (b);
     a_u <= unsigned(a);
     b_u <= unsigned(b);
+    branch_condition <= s_branch_cond;
 
     res_unbuff <= std_logic_vector(result_u);
 
@@ -65,11 +67,17 @@ begin
 --        result_s <= a_s   b_s when ALU_CTRL_,
 
     -- Add branch logic as well
-    --with ctrl select
-     --   branch_cond <=
-      --     s_gez when ALU_CTRL_BGEZ
-       --    s_ltz when ALU_CTRL_BLTZ
-            
+    s_gez <= '1' when a_s > 0 else '0';
+    s_ltz <= '1' when a_s < 0 else '0';
+    s_eq  <= '1' when a_s = b_s else '0';
+
+    with ctrl select
+        s_branch_cond <=
+            s_gez when ALU_CTRL_BGTZ,
+            s_ltz when ALU_CTRL_BLEZ,
+            s_eq  when ALU_CTRL_BEQ,
+            not s_eq when ALU_CTRL_BNE,
+            '0' when others;
 
     latch : process (clk, signedp)
     begin
