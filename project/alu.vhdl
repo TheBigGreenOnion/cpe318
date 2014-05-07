@@ -9,7 +9,7 @@ use work.lib_mips32.all;
 entity alu is
     port (a,b : in std_logic_vector(31 downto 0);
         ctrl, shamt : in std_logic_vector(4 downto 0);
-        clk : in std_logic;
+        reg_eq, clk : in std_logic;
         result, res_unbuff : out std_logic_vector(31 downto 0);
         branch_condition : out std_logic);
 end entity alu;
@@ -22,7 +22,7 @@ architecture behav of alu is
     signal a_s, b_s : signed(31 downto 0);
     signal a_u, b_u : unsigned(31 downto 0);
 
-    signal s_eq, s_ltz, s_gez : std_logic;
+    signal s_eq, s_ltz, s_gez, s_neq : std_logic;
     signal signedp : std_logic;
 begin
     a_s <= signed (a);
@@ -47,6 +47,10 @@ begin
         result_u <= 
             a_u - b_u when ALU_CTRL_SUBU,
             a_u + b_u when ALU_CTRL_ADDU, 
+            b_u when ALU_CTRL_BEQ, 
+            b_u when ALU_CTRL_BNE, 
+            a_u + b_u when ALU_CTRL_BLEZ, 
+            a_u + b_u when ALU_CTRL_BGTZ, 
             unsigned(a and b) when ALU_CTRL_AND,
             unsigned(a or b) when ALU_CTRL_OR,
             unsigned(a xor b) when ALU_CTRL_XOR,
@@ -68,15 +72,16 @@ begin
 
     -- Add branch logic as well
     s_gez <= '1' when a_s > 0 else '0';
-    s_ltz <= '1' when a_s < 0 else '0';
-    s_eq  <= '1' when a_s = b_s else '0';
+    s_ltz <= '1' when a_s <= 0 else '0';
+    s_eq  <= '1' when reg_eq = '1' else '0';
+    s_neq <= '0' when reg_eq = '1' else '1';
 
     with ctrl select
         s_branch_cond <=
             s_gez when ALU_CTRL_BGTZ,
             s_ltz when ALU_CTRL_BLEZ,
             s_eq  when ALU_CTRL_BEQ,
-            not s_eq when ALU_CTRL_BNE,
+            s_neq when ALU_CTRL_BNE,
             '0' when others;
 
     latch : process (clk, signedp)

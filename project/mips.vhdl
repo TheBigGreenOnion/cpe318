@@ -57,6 +57,7 @@ architecture structural of mips is
     signal c_reg_dest : std_logic;
     signal c_reg_write : std_logic;
     signal c_mem_en : std_logic;
+    signal c_reg_eq : std_logic;
 
     -- Various intermediary bundles
     signal b_pc_dest : std_logic_vector(31 downto 0);
@@ -71,6 +72,7 @@ architecture structural of mips is
 
 begin
     -- Component instances
+    c_reg_eq <= '1' when b_regdat1 = b_regdat2 else '0';
     alu1 : entity work.alu
         port map (
             a => b_alu_a,
@@ -78,6 +80,7 @@ begin
             clk => g_clk,
             ctrl => c_alu_ctrl,
             shamt => g_shamt,
+            reg_eq => c_reg_eq,
             result => b_alu_out,
             res_unbuff => b_alu_unbuff,
             branch_condition => c_alu_branch

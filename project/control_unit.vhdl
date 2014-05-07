@@ -44,6 +44,10 @@ begin
             J when JAL_OP,
             J when J_OP,
             B when REGIMM_OP,
+            B when BEQ_OP,
+            B when BNE_OP,
+            B when BLEZ_OP,
+            B when BGTZ_OP,
             R when R_TYPE_OP,
             I when others;
 
@@ -60,15 +64,15 @@ begin
                        "11" when others; -- load and store
     with itype select
         s_reg_dest <= '0' when I,
-                      '1' when B,
+                      '0' when B,
                       '0' when J,
                       '1' when R,
                       '0' when others;
     
     with itype select
-        s_pc_write <= '1' when B,
-                      '1' when J,
-                      '0' when others;
+        s_pc_write <=
+            '1' when J,
+            '0' when others;
 
     s_mem_read <= '1'  when memwb = load else '0';
     s_mem_write <= '1'  when memwb = store else '0';
