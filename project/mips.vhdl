@@ -7,7 +7,8 @@ use ieee.numeric_std.all;
 use work.lib_mips32.all;
 
 entity mips is
-    port (clk, rst : std_logic);
+    port (clk, rst : in std_logic;
+         seg_0, seg_1, seg_2, seg_3, seg_4, seg_5, seg_6, seg_7 : out std_logic_vector(6 downto 0));
 end entity mips;
 
 architecture structural of mips is
@@ -39,7 +40,7 @@ architecture structural of mips is
     signal c_alu_zero : std_logic;
     signal c_alu_ctrl : std_logic_vector(4 downto 0);
 
-    signal b_alu_b1 : std_logic_vector(31 downto 0) := x"00000004";
+    signal b_alu_b1 : std_logic_vector(31 downto 0) ;
     signal b_alu_b2 : std_logic_vector(31 downto 0);
     signal b_alu_b3 : std_logic_vector(31 downto 0);
 
@@ -66,6 +67,7 @@ architecture structural of mips is
     signal b_regdat1 : std_logic_vector(31 downto 0);
     signal b_regdat2 : std_logic_vector(31 downto 0);
     signal b_ram_data : std_logic_vector(31 downto 0);
+    signal b_seg_in : std_logic_vector(31 downto 0);
 
 begin
     -- Component instances
@@ -183,7 +185,7 @@ begin
         generic map (n => 32)
         port map (
             a => b_regdat2, -- reg b
-            b => b_alu_b1,
+            b => x"00000004",
             c => b_alu_b2,
             d => b_alu_b3,
             sel => c_alu_src_b,
@@ -214,5 +216,19 @@ begin
            clk => g_clk,
            rst => g_rst
        );
+
+
+    seg7word1 : entity work.seg7word
+        port map (
+            d_in => b_seg_in,
+            seg_0 => seg_0,
+            seg_1 => seg_1,
+            seg_2 => seg_2,
+            seg_3 => seg_3,
+            seg_4 => seg_4,
+            seg_5 => seg_5,
+            seg_6 => seg_6,
+            seg_7 => seg_7
+        );
 
 end architecture;
