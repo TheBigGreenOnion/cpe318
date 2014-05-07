@@ -7,8 +7,11 @@ use ieee.numeric_std.all;
 use work.lib_mips32.all;
 
 entity mips is
-    port (clk, rst : in std_logic;
-         seg_0, seg_1, seg_2, seg_3, seg_4, seg_5, seg_6, seg_7 : out std_logic_vector(6 downto 0));
+    port (
+        clk, rst : in std_logic;
+        debug_sel : in std_logic_vector(1 downto 0);
+        seg_0, seg_1, seg_2, seg_3, seg_4, seg_5, seg_6, seg_7 : out std_logic_vector(6 downto 0)
+    );
 end entity mips;
 
 architecture structural of mips is
@@ -70,7 +73,32 @@ architecture structural of mips is
     signal b_ram_data : std_logic_vector(31 downto 0);
     signal b_seg_in : std_logic_vector(31 downto 0);
 
+    signal    debug_dat_0 : std_logic_vector(31 downto 0);
+    signal    debug_dat_1  : std_logic_vector(31 downto 0);
+    signal    debug_dat_2  : std_logic_vector(31 downto 0);
+    signal    debug_dat_3  : std_logic_vector(31 downto 0);
+
 begin
+
+--- DEBUG
+    debug_dat_0 <= b_pc_addr;
+    debug_dat_1 <= b_alu_out;
+    debug_dat_2 <= b_regdat1;
+    debug_dat_3 <= g_instruction;
+
+    debugmux : entity work.mux4
+        generic map (n => 32)
+        port map (
+           a => debug_dat_0,
+           b => debug_dat_1,
+           c => debug_dat_2,
+           d => debug_dat_3,
+           sel => debug_sel,
+           output => b_seg_in
+       );
+
+-- END DEBUG
+
     -- Component instances
     c_reg_eq <= '1' when b_regdat1 = b_regdat2 else '0';
     alu1 : entity work.alu
